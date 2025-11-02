@@ -27,8 +27,8 @@ body{
   color:var(--ink);
   background:var(--bg);
   line-height:1.65;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 }
+
 img{max-width:100%;height:auto;display:block}
 a{color:#0b5fff;text-decoration:none}
 a:hover{text-decoration:underline}
@@ -42,7 +42,7 @@ a:hover{text-decoration:underline}
   display:block; 
   text-align:center;
   font-weight:700;
-  font-size:clamp(1.2rem,2vw+1rem,1.8rem);
+  font-size:clamp(1.2rem,2vw,1.8rem);
   letter-spacing:.2px;
 }
 .highlight-name{color:var(--accent);font-weight:700}
