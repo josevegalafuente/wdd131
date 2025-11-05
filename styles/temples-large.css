@@ -13,13 +13,16 @@
   .nav {
     display: block;
     width: auto;
+    background: transparent;
+    border-top: none;
+    padding: 0;
   }
 
   .nav ul {
-    flex-direction: row;     
-    gap: 2rem; 
-    margin: 0;               
-    padding: 0;              
+    flex-direction: row;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
   }
 
   .nav li {
@@ -36,3 +39,4 @@
     margin: 0 auto;
   }
 }
+
