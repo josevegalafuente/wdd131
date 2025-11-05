@@ -1,0 +1,38 @@
+@media (min-width: 700px) {
+  #menuButton {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #202020;
+  }
+
+  .nav {
+    display: block;
+    width: auto;
+  }
+
+  .nav ul {
+    flex-direction: row;     
+    gap: 2rem; 
+    margin: 0;               
+    padding: 0;              
+  }
+
+  .nav li {
+    padding: 0;
+  }
+
+  .nav a:hover {
+    border-bottom: 2px solid white;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,131 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #b8c8d7;
+}
+
+header {
+  background-color: #202020;
+  color: #b8c8d7;
+  padding: 1rem;
+  position: relative;
+}
+
+#menuButton {
+  background: none;
+  border: none;
+  color: #b8c8d7;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.site-header {
+  background-color: #202020;     
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 4px solid #eeeeee;  
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.hamburger {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.nav {
+  display: none;
+}
+
+.nav.open {
+  display: block;
+  width: 100%;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0 0.25rem;
+  display: flex;
+  flex-direction: column; 
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.25rem;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  display: none;
+  flex-direction: column;
+  background-color: #202020;
+  padding: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+nav a:hover {
+  background-color: #202020;
+}
+
+main {
+  text-align: center;
+  padding: 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+  height: 220px; 
+  object-fit: cover; 
+  border-radius: 8px;
+  border: 2px solid #202020; 
+}
+
+figcaption {
+  margin-top: 0.5rem;
+}
+
+footer {
+  background-color: #202020;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer .modified {
+  color: #f73c1f; 
+  margin-top: 0.5rem;
+}
