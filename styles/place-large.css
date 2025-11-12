@@ -1,0 +1,30 @@
+.hero{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 2rem clamp(3vw, 5%, 6vw);
+}
+
+.hero{
+  position: relative;
+}
+
+.card{
+  width: min(360px, 38vw);
+}
+
+.data{
+  position: absolute;
+  top: clamp(24px, 6vw, 64px);
+  left: clamp(12px, 4vw, 40px);
+}
+
+.weather{
+  position: absolute;
+  top: clamp(24px, 6vw, 64px);
+  right: clamp(12px, 4vw, 40px);
+}
+
+.facts{ row-gap: 10px; }
+.weather-list li{ padding:6px 0; }
