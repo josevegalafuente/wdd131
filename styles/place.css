@@ -1,7 +1,7 @@
 :root{
   --red:#6787aF;       
-  --red-dark:#f59300;      
-  --bg:#F3EEE8;          
+  --red-dark:#f59300;  
+  --bg:#F3EEE8;
   --text:#222;
   --card-bg: rgba(161, 184, 218, 0.92);
   --shadow: 0 12px 24px rgba(0,0,0,.25);
@@ -75,12 +75,11 @@ body{
   padding: clamp(14px, 3vw, 18px);
 }
 
-.ribbon{
-  position: relative;
-  margin:0 0 10px 0;
-  font-size: clamp(18px, 2.6vw, 28px);
-  font-weight: 800;
-  color:#fff;
+.ribbon span:first-child{
+  background: var(--accent);
+  padding: .5rem .85rem;
+  border-radius: 6px;
+  display: inline-block;
 }
 .ribbon span:first-child{
   background: var(--green);
@@ -108,13 +107,32 @@ body{
 }
 .weather-list li{ padding:4px 0; }
 
+.wx-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1;
+}
+
+.wx-icon {
+  height: 2em !important;   
+  width: auto !important;     
+  display: inline-block;
+  vertical-align: middle;
+  flex: 0 0 auto;
+  max-width: none;             
+}
+
+.weather img.wx-icon {
+  width: auto !important;
+}
+
 .site-footer{
   background: var(--red);
   color:#F3EEE8; 
   text-align:center;
   padding-block: 20px 26px;
   border-top: 15px solid var(--red-dark);
-  margin-top: 24px;
 }
 .site-footer p{ margin:.25rem 0; }
 

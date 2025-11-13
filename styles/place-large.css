@@ -1,13 +1,17 @@
 .hero{
-  margin-top: 20px;
-  display: flex;
+  margin-top: 0;
+  display: block;
   justify-content: space-between;
   align-items: start;
-  padding: 2rem clamp(3vw, 5%, 6vw);
+  padding: 0;
+  position: relative;
 }
 
-.hero{
-  position: relative;
+.hero img{
+  height: 85vh;         
+  width: 100%;
+  object-fit: cover;     
+  display: block;
 }
 
 .card{

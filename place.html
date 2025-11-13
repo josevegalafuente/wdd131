@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,26 +19,26 @@
   </header>
 
   <main>
+    <section class="hero" aria-label="Fotografía de pingüinos y tarjetas de datos y clima">
+      <img
+        class="hero-photo"
+        src="images/penguins-large.webp"
+        srcset="
+          images/penguins-small.webp 600w,
+          images/penguins-medium.webp 900w,
+          images/penguins-large.webp 1500w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 1500px"
+        alt="Pingüinos en la costa de Ushuaia"
+        width="1500" height="900" />
 
-    <figure class="hero">
-
-      <img class="hero-photo"
-     src="images/penguins-large.webp"
-     srcset="
-       images/penguins-small.webp 600w,
-       images/penguins-medium.webp 900w,
-       images/penguins-large.webp 1500w
-     "
-     sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 1500px"
-     alt="Pingüinos en la costa de Ushuaia" />
-     
       <section class="card data" aria-labelledby="data-title">
         <h2 id="data-title" class="ribbon"><span>Data</span></h2>
         <dl class="facts">
           <div><dt>Area:</dt><dd>23 km² (city proper)</dd></div>
           <div><dt>Population:</dt><dd>82,615 (as of 2022)</dd></div>
           <div><dt>Capital:</dt><dd>Tierra del Fuego Province, Antarctica and South Atlantic Islands</dd></div>
-          <div><dt>Languages:</dt><dd>Spanish (official) — although English is also used in tourism contexts</dd></div>
+          <div><dt>Languages:</dt><dd>Spanish (official) - although English is also used in tourism contexts</dd></div>
           <div><dt>Currency:</dt><dd>Argentine Peso (ARS)</dd></div>
           <div><dt>Time Zone:</dt><dd>UTC −3 (ART – Argentina Time)</dd></div>
           <div><dt>Calling Code:</dt><dd>+54 (Argentina) and local area code 2901 for Ushuaia</dd></div>
@@ -47,27 +47,25 @@
       </section>
 
       <section class="card weather" aria-labelledby="weather-title">
-        <h2 id="weather-title" class="ribbon">
-          <span>Weather</span><span class="wx-emoji" aria-hidden="true">⛅</span>
+        <h2 id="weather-title" class="ribbon wx-heading">
+          <span>Weather</span>
+          <img class="wx-icon" src="images/mountain.svg" alt="" aria-hidden="true" />
         </h2>
+        
         <ul class="weather-list">
-          <li><strong>Temperature:</strong> <span id="temp">10</span> °C</li>
-          <li><strong>Conditions:</strong> Partly Cloudy</li>
-          <li><strong>Wind:</strong> 5 km/h</li>
-          <li><strong>Wind Chill:</strong> <span id="windchill">9.8</span> °C</li>
+          <li><strong>Temperature:</strong> <span id="temp">2</span> °C</li>
+          <li><strong>Conditions:</strong> Cloudy</li>
+          <li><strong>Wind:</strong> <span id="wind">8</span> km/h</li>
+          <li><strong>Wind Chill:</strong> <span id="windchill">N/A</span> °C</li>
         </ul>
       </section>
-    </figure>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>
-        © 2025 • Jose Vega • Bolivia
-      </p>
-      <p>Last Modification: <span id="lastModified"></span></p>
-    </div>
-  </footer>
-</body>
-</html>
+  <div class="container">
+    <p>© <span id="year"></span> • Jose Vega • Bolivia</p>
+    <p>Last Modification: <time id="lastModified" datetime=""></time></p>
+  </div>
+</footer>
 
