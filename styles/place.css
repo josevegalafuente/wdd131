@@ -34,6 +34,7 @@ body{
   padding-block:22px;
   border-bottom: 15px solid var(--red-dark);
   position: relative;
+}
 
 .site-header::after{
   content:"";
@@ -45,7 +46,7 @@ body{
   background:var(--accent);      
 }
 
-}
+
 .site-header h1{
   margin:0;
   font-size: clamp(28px, 4.2vw, 56px);
