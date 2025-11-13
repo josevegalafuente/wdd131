@@ -33,6 +33,18 @@ body{
   text-align:center;
   padding-block:22px;
   border-bottom: 15px solid var(--red-dark);
+  position: relative;
+
+.site-header::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-14px;       
+  height:14px;
+  background:var(--accent);      
+}
+
 }
 .site-header h1{
   margin:0;
@@ -43,6 +55,7 @@ body{
 .accent-line{
   height:14px;
   background:var(--green);
+  display:none;
 }
 
 .hero {
@@ -139,3 +152,26 @@ body{
 .data, .weather{
   position: static;
 }
+
+@media screen and (min-width: 900px) {
+  .hero img {
+    height: 85vh;
+  }
+
+  .card {
+    width: min(360px, 38vw);
+  }
+
+  .data {
+    position: absolute;
+    top: clamp(24px, 6vw, 64px);
+    left: clamp(12px, 4vw, 40px);
+  }
+
+  .weather {
+    position: absolute;
+    top: clamp(24px, 6vw, 64px);
+    right: clamp(12px, 4vw, 40px);
+  }
+}
+
