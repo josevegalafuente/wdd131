@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ushuaia - Argentina</title>
   <meta name="description" content="Discover Ushuaia, Argentina - the southernmost city in the world, known for its stunning landscapes, unique wildlife, and rich cultural heritage." />
+  <meta name="author" content="Jose Vega La Fuente" />
   <link rel="stylesheet" href="styles/place.css" />
   <link rel="stylesheet" href="styles/place-large.css" media="screen and (min-width: 900px)" />
   <script src="scripts/place.js" defer></script>
@@ -21,19 +22,27 @@
 
     <figure class="hero">
 
-      <img src="images/penguins.webp" alt="Pingüinos en Madagascar" />
-
+      <img class="hero-photo"
+     src="images/penguins-large.webp"
+     srcset="
+       images/penguins-small.webp 600w,
+       images/penguins-medium.webp 900w,
+       images/penguins-large.webp 1500w
+     "
+     sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 1500px"
+     alt="Pingüinos en la costa de Ushuaia" />
+     
       <section class="card data" aria-labelledby="data-title">
         <h2 id="data-title" class="ribbon"><span>Data</span></h2>
         <dl class="facts">
-          <div><dt>Area:</dt><dd>587,041 sq km</dd></div>
-          <div><dt>Population:</dt><dd>27,691,018</dd></div>
-          <div><dt>Capital:</dt><dd>Antananarivo</dd></div>
-          <div><dt>Languages:</dt><dd>Malagasy, French</dd></div>
-          <div><dt>Currency:</dt><dd>Malagasy Ariary</dd></div>
-          <div><dt>Time Zone:</dt><dd>UTC+3</dd></div>
-          <div><dt>Calling Code:</dt><dd>+261</dd></div>
-          <div><dt>Internet TLD:</dt><dd>.mg</dd></div>
+          <div><dt>Area:</dt><dd>23 km² (city proper)</dd></div>
+          <div><dt>Population:</dt><dd>82,615 (as of 2022)</dd></div>
+          <div><dt>Capital:</dt><dd>Tierra del Fuego Province, Antarctica and South Atlantic Islands</dd></div>
+          <div><dt>Languages:</dt><dd>Spanish (official) — although English is also used in tourism contexts</dd></div>
+          <div><dt>Currency:</dt><dd>Argentine Peso (ARS)</dd></div>
+          <div><dt>Time Zone:</dt><dd>UTC −3 (ART – Argentina Time)</dd></div>
+          <div><dt>Calling Code:</dt><dd>+54 (Argentina) and local area code 2901 for Ushuaia</dd></div>
+          <div><dt>Internet TLD:</dt><dd>.ar</dd></div>
         </dl>
       </section>
 
