@@ -5,13 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const last = document.getElementById("lastModified");
   if (last) {
-    last.textContent = document.lastModified; 
-    const iso = new Date(document.lastModified).toISOString();
-    last.setAttribute("datetime", iso);
+    const date = new Date(document.lastModified);
+
+    last.textContent = date.toLocaleString();
+
+    last.setAttribute("datetime", date.toISOString());
   }
 
-  const temperatureC = 2;  
-  const windKmh = 8;        
+  const temperatureC = 2;   
+  const windKmh = 8;       
 
   const tempEl = document.getElementById("temp");
   const windEl = document.getElementById("wind");
@@ -30,4 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
       chillEl.textContent = "N/A";
     }
   }
+
 });
+
