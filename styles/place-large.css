@@ -1,34 +1,43 @@
-.hero{
-  margin-top: 0;
-  display: block;
-  justify-content: space-between;
-  align-items: start;
-  padding: 0;
-  position: relative;
-}
+@media screen and (min-width: 900px) {
 
-.hero img{
-  height: 85vh;         
-  width: 100%;
-  object-fit: cover;     
-  display: block;
-}
+  .hero{
+    margin-top: 0;
+    display: block;
+    justify-content: space-between;
+    align-items: start;
+    padding: 0;
+    position: relative;
+  }
 
-.card{
-  width: min(360px, 38vw);
-}
+  .hero img{
+    height: 85vh;         
+    width: 100%;
+    object-fit: cover;     
+    display: block;
+  }
 
-.data{
-  position: absolute;
-  top: clamp(24px, 6vw, 64px);
-  left: clamp(12px, 4vw, 40px);
-}
+  .card{
+    width: min(360px, 38vw);
+  }
 
-.weather{
-  position: absolute;
-  top: clamp(24px, 6vw, 64px);
-  right: clamp(12px, 4vw, 40px);
-}
+  .data{
+    position: absolute;
+    top: clamp(24px, 6vw, 64px);
+    left: clamp(12px, 4vw, 40px);
+  }
 
-.facts{ row-gap: 10px; }
-.weather-list li{ padding:6px 0; }
+  .weather{
+    position: absolute;
+    top: clamp(24px, 6vw, 64px);
+    right: clamp(12px, 4vw, 40px);
+  }
+
+  .facts{ 
+    row-gap: 10px; 
+  }
+
+  .weather-list li{ 
+    padding:6px 0; 
+  }
+
+}
