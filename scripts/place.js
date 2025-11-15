@@ -1,18 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+
   const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
   const last = document.getElementById("lastModified");
   if (last) {
     const date = new Date(document.lastModified);
 
-    last.textContent = date.toLocaleString();
+    const formatTwo = (num) => num.toString().padStart(2, "0");
+
+    const mm = formatTwo(date.getMonth() + 1); 
+    const dd = formatTwo(date.getDate());      
+    const yyyy = date.getFullYear();           
+
+    const hours = formatTwo(date.getHours()); 
+    const minutes = formatTwo(date.getMinutes());
+
+    const formattedText = `${mm}/${dd}/${yyyy} ${hours}:${minutes}`;
+    last.textContent = formattedText;
 
     last.setAttribute("datetime", date.toISOString());
   }
 
-  const temperatureC = 2;   
+  const temperatureC = 2;  
   const windKmh = 8;       
 
   const tempEl = document.getElementById("temp");
@@ -34,4 +47,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
-
