@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Album - Filtered Temples</title>
+  <meta name="description"
+    content="Explore and filter through our beautiful collection of temple photographs from around the world. Filter by age, size, and more.">
+  <meta name="author" content="Paul Makumbi">
+  <link rel="stylesheet" href="styles/filtered-temples-large.css" media="(min-width: 1024px)" >
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+  <script src="scripts/filtered-temples.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <h1>Temple Album</h1>
+      <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link active" data-filter="home">Home</a></li>
+          <li><a href="#" class="nav-link" data-filter="old">Old</a></li>
+          <li><a href="#" class="nav-link" data-filter="new">New</a></li>
+          <li><a href="#" class="nav-link" data-filter="large">Large</a></li>
+          <li><a href="#" class="nav-link" data-filter="small">Small</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2>Temple Gallery</h2>
+
+    <div class="gallery" id="templeGallery">
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; <span id="currentYear"></span> Jose Vega • Bolivia</p>
+      <p id="lastModified">Last Modified: </p>
+    </div>
+  </footer>
+</body>
+
+</html>
