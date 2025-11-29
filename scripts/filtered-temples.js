@@ -86,7 +86,30 @@ const temples = [
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/salta-argentina-temple/salta-argentina-temple-48241-main.jpg"
   },
-  
+  {
+    templeName: "Manhattan New York",
+    location: "Manhattan, New York, United States",
+    dedicated: "2004, June, 13",
+    area: 20630,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/manhattan-new-york-temple/manhattan-new-york-temple-40080-main.jpg"
+  },
+  {
+    templeName: "Albuquerque New Mexico",
+    location: "Albuquerque, New Mexico, United States",
+    dedicated: "2000, March, 5",
+    area: 34245,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/albuquerque-new-mexico-temple/albuquerque-new-mexico-temple-56335-main.jpg"
+  },
+  {
+    templeName: "Mendoza Argentina",
+    location: "Mendoza, Argentina",
+    dedicated: "2024, September, 22",
+    area: 20630,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/mendoza-argentina-temple/mendoza-argentina-temple-51739-main.jpg"
+  },
 ];
 
 
