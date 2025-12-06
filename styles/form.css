@@ -137,7 +137,6 @@ body {
 }
 
 .site-header h1 {
-  font-family: var(--heading-font);
   font-size: 2rem;
   color: var(--white);
 }
