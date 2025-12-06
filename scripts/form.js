@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const products = [
-    { id: "fc-1888", name: "Samsung Galaxy S24 Ultra", averagerating: 4.5 },
-    { id: "fc-2050", name: "Dell XPS 14", averagerating: 4.7 },
-    { id: "fs-1987", name: "iPhone 16 Pro Max", averagerating: 3.5 },
-    { id: "ac-2000", name: "Alienware m16", averagerating: 3.9 },
-    { id: "jj-1969", name: "Lenovo Legion 7i", averagerating: 5.0 }
+    { id: "fc-1888", name: "Notion", averagerating: 4.5 },
+    { id: "fc-2050", name: "ClickUp", averagerating: 4.7 },
+    { id: "fs-1987", name: "Monday", averagerating: 3.5 },
+    { id: "ac-2000", name: "Zapier", averagerating: 3.9 },
+    { id: "jj-1969", name: "Asana", averagerating: 5.0 }
   ];
 
   const productSelect = document.getElementById("product-name");
