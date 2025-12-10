@@ -52,7 +52,7 @@ h3 {
 
 p {
     margin-bottom: 1rem;
-    color: var(--text-light);
+    color: #ffffff;
 }
 
 /* ===== ENCABEZADO Y NAVEGACIÓN ===== */
@@ -141,15 +141,6 @@ p {
     position: relative;
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 3px;
-    background-color: var(--wood-brown);
-    margin: 1rem auto;
-}
-
 /* ===== BOTONES ===== */
 .btn {
     display: inline-block;
@@ -174,6 +165,7 @@ p {
 
 .btn-secondary {
     background-color: var(--wood-brown);
+    color: #ffffff
 }
 
 .btn-secondary:hover {

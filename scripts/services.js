@@ -8,11 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const favoritesList = document.getElementById('favoritesList');
     const clearFavoritesBtn = document.getElementById('clearFavoritesBtn');
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const searchInput = document.getElementById('serviceSearch');
 
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-    // Datos de las habitaciones
+    // Datos de las caminatas (hikes)
     const servicesData = {
         rooms: [
             {
@@ -23,7 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 price: 60,
                 size: '24 km',
                 capacity: '10 adults',
-                amenities: ['Light breakfast (yogurt and an apple)', 'transportation to the trail starting point', 'two bottles of water per guest', 'Afternoon lodging', 'Lunch after the hike', 'Return transportation'],
+                amenities: [
+                    'Light breakfast (yogurt and an apple)',
+                    'transportation to the trail starting point',
+                    'two bottles of water per guest',
+                    'Afternoon lodging',
+                    'Lunch after the hike',
+                    'Return transportation'
+                ],
                 featured: true,
                 image: 'images/marquiri.jpg'
             },
@@ -35,7 +41,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 price: 180,
                 size: '60 km',
                 capacity: '10 adults',
-                amenities: ['Bolivian Breakfast', 'Transportation to the trail starting point', 'Four bottles of water per guest', 'Lunch after the hike', 'Dinner', 'Camping equipment', 'Return transportation'],
+                amenities: [
+                    'Bolivian Breakfast',
+                    'Transportation to the trail starting point',
+                    'Four bottles of water per guest',
+                    'Lunch after the hike',
+                    'Dinner',
+                    'Camping equipment',
+                    'Return transportation'
+                ],
                 featured: true,
                 image: 'images/pilaya.jpg'
             },
@@ -47,7 +61,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 price: 30,
                 size: '19 km',
                 capacity: '20 adults + 10 children',
-                amenities: ['Transportation to the trail starting point', 'One bottle of water per guest', 'Afternoon lodging', 'Return transportation'],
+                amenities: [
+                    'Transportation to the trail starting point',
+                    'One bottle of water per guest',
+                    'Afternoon lodging',
+                    'Return transportation'
+                ],
                 featured: true,
                 image: 'images/coimata.jpg'
             },
@@ -59,7 +78,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 price: 40,
                 size: '21 km',
                 capacity: '20 adults + 10 children',
-                amenities: ['Transportation to the trail starting point', 'One bottle of water per guest', 'Afternoon lodging', 'Return transportation'],
+                amenities: [
+                    'Transportation to the trail starting point',
+                    'One bottle of water per guest',
+                    'Afternoon lodging',
+                    'Return transportation'
+                ],
                 featured: true,
                 image: 'images/jurina.jpg'
             },
@@ -71,7 +95,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 price: 120,
                 size: '80 km',
                 capacity: '10 adults',
-                amenities: ['Bolivian Breakfast', 'Transportation to the trail starting point', 'Two bottles of water per guest', 'Lunch after the hike', 'Dinner', 'Return transportation'],
+                amenities: [
+                    'Bolivian Breakfast',
+                    'Transportation to the trail starting point',
+                    'Two bottles of water per guest',
+                    'Lunch after the hike',
+                    'Dinner',
+                    'Return transportation'
+                ],
                 featured: true,
                 image: 'images/cover.jpg'
             }
@@ -80,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 101,
                 name: 'Camping',
-                description: 'Explore the forest with our experienced naturalist guide. Learn about local flora and fauna.',
+                description: 'Experience the night in nature with guided forest walks, mountain views, and a true outdoor adventure.',
                 price: 50,
                 duration: '12 hours',
                 difficulty: 'Easy',
@@ -90,18 +121,27 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 102,
                 name: 'Glamping',
-                description: 'Start your day with a peaceful yoga session in our forest clearing.',
+                description: 'Enjoy comfort in the wilderness with panoramic views and a relaxing experience close to nature.',
                 price: 80,
                 duration: '12 hours',
                 difficulty: 'Easy',
                 featured: true,
                 image: 'images/glamping.jpg'
+            },
+            {
+                id: 103,
+                name: 'Alpina',
+                description: 'Stay in a cozy alpine cabin surrounded by peaceful forest scenery, perfect for a quiet nature escape.',
+                price: 120,
+                duration: '12 hours',
+                difficulty: 'Easy',
+                featured: true,
+                image: 'images/alpina.jpg'
             }
-        ],
-        
+        ]
     };
 
-    // Función para crear tarjeta de habitación (SIN BOTÓN DETAILS)
+    // Crear tarjeta para cada hike (antes "habitación")
     function createRoomCard(room) {
         const isFavorite = favorites.includes(room.id);
         const featuredBadge = room.featured ? '<span class="featured-badge">Featured</span>' : '';
@@ -118,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     
                     <div class="card-details">
                         <div class="detail-item">
-                            <span class="detail-label">Size:</span>
+                            <span class="detail-label">Distance:</span>
                             <span class="detail-value">${room.size}</span>
                         </div>
                         <div class="detail-item">
@@ -132,23 +172,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                     
                     <div class="amenities">
-                        ${room.amenities.slice(0, 3).map(amenity =>
-            `<span class="amenity-tag">${amenity}</span>`
-        ).join('')}
-                        ${room.amenities.length > 3 ? `<span class="amenity-tag">+${room.amenities.length - 3} more</span>` : ''}
+                        ${room.amenities
+                            .slice(0, 3)
+                            .map(amenity => `<span class="amenity-tag">${amenity}</span>`)
+                            .join('')}
+                        ${room.amenities.length > 3
+                            ? `<span class="amenity-tag">+${room.amenities.length - 3} more</span>`
+                            : ''}
                     </div>
                     
                     <div class="card-footer">
                         <div class="price">
                             <span class="price-amount">$${room.price}</span>
-                            <span class="price-unit">/night</span>
+                            <span class="price-unit">/person</span>
                         </div>
                         <div class="card-actions">
                             <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-id="${room.id}" aria-label="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">
                                 ${isFavorite ? '♥' : '♡'}
                             </button>
-                            <button class="btn btn-small book-btn" data-id="${room.id}">Book Now</button>
-                            <!-- BOTÓN DETAILS ELIMINADO -->
+                            <button class="btn btn-small book-btn" data-id="${room.id}">Book Hike</button>
                         </div>
                     </div>
                 </div>
@@ -156,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
-    // Función para crear tarjeta de actividad
+    // Crear tarjeta de actividad
     function createActivityCard(activity) {
         return `
             <div class="service-card" data-id="${activity.id}">
@@ -191,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
-    // Función para crear tarjeta de restaurante (SIN BOTÓN VIEW MENU)
+    // (Actualmente no se usa en el HTML, pero se mantiene por si lo necesitas luego)
     function createDiningCard(dining) {
         return `
             <div class="service-card" data-id="${dining.id}">
@@ -219,7 +261,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                     
                     <div class="card-footer">
-                        <!-- BOTÓN VIEW MENU ELIMINADO -->
                         <button class="btn btn-small btn-secondary" onclick="window.location.href='reservations.html'">Reserve Table</button>
                     </div>
                 </div>
@@ -227,23 +268,14 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
-    // Función para renderizar habitaciones
-    function renderRooms(filter = 'all', searchTerm = '') {
+    // Renderizar hikes (antes "rooms")
+    function renderRooms(filter = 'all') {
         let filteredRooms = servicesData.rooms;
 
-        // Aplicar filtro por tipo
+        // Filtro por tipo
         if (filter !== 'all') {
-            filteredRooms = filteredRooms.filter(room => room.type === filter);
-        }
-
-        // Aplicar búsqueda
-        if (searchTerm.trim()) {
-            const term = searchTerm.toLowerCase();
-            filteredRooms = filteredRooms.filter(room =>
-                room.name.toLowerCase().includes(term) ||
-                room.description.toLowerCase().includes(term) ||
-                room.amenities.some(a => a.toLowerCase().includes(term)) ||
-                room.type.toLowerCase().includes(term)
+            filteredRooms = filteredRooms.filter(
+                room => room.type.toLowerCase() === filter.toLowerCase()
             );
         }
 
@@ -253,8 +285,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             roomsContainer.innerHTML = `
                 <div class="no-results">
-                    <p>😔 No rooms match your criteria.</p>
-                    <p>Try a different filter or search term.</p>
+                    <p>😔 No hikes match your criteria.</p>
+                    <p>Try a different filter.</p>
                     <button class="btn btn-secondary mt-2" id="resetFiltersBtn">Reset Filters</button>
                 </div>
             `;
@@ -267,42 +299,44 @@ document.addEventListener('DOMContentLoaded', function () {
                         btn.classList.remove('active');
                     }
                 });
-                searchInput.value = '';
-                renderRooms('all', '');
+                renderRooms('all');
             });
         }
 
-        // Agregar eventos a los botones
+        // Eventos de los botones dentro de las tarjetas
         addCardEventListeners();
     }
 
-    // Función para renderizar actividades
+    // Renderizar actividades
     function renderActivities() {
         const activitiesContainer = document.getElementById('activitiesContainer');
         if (activitiesContainer) {
-            activitiesContainer.innerHTML = servicesData.activities.map(createActivityCard).join('');
+            activitiesContainer.innerHTML = servicesData.activities
+                .map(createActivityCard)
+                .join('');
 
-            // Agregar eventos a botones de actividades
             document.querySelectorAll('.book-activity-btn').forEach(btn => {
                 btn.addEventListener('click', function () {
                     const activityId = this.dataset.id;
                     const activity = servicesData.activities.find(a => a.id == activityId);
-                    alert(`Booking ${activity.name} for $${activity.price}/person\nYou'll be redirected to reservations page.`);
+                    alert(
+                        `Booking ${activity.name} for $${activity.price}/person\nYou'll be redirected to reservations page.`
+                    );
                     window.location.href = 'reservations.html';
                 });
             });
         }
     }
 
-    // Función para renderizar restaurantes
+    // Renderizar restaurantes (sólo si existiera un contenedor en el HTML)
     function renderDining() {
         const diningContainer = document.getElementById('diningContainer');
-        if (diningContainer) {
+        if (diningContainer && servicesData.dining) {
             diningContainer.innerHTML = servicesData.dining.map(createDiningCard).join('');
         }
     }
 
-    // Agregar eventos a las tarjetas
+    // Eventos en tarjetas de hikes
     function addCardEventListeners() {
         // Botones de favoritos
         document.querySelectorAll('.favorite-btn').forEach(btn => {
@@ -319,17 +353,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.stopPropagation();
                 const roomId = parseInt(this.dataset.id);
                 const room = servicesData.rooms.find(r => r.id === roomId);
-                alert(`Booking ${room.name} for $${room.price}/night\nRedirecting to reservations...`);
+                alert(
+                    `Booking ${room.name} hike for $${room.price}/person\nRedirecting to reservations...`
+                );
+                // Se mantiene el parámetro "room" para no romper reservations.html
                 window.location.href = `reservations.html?room=${roomId}`;
             });
         });
 
-        // BOTONES DE DETALLES ELIMINADOS
-
-        // Click en tarjeta completa (excepto en botones)
+        // Click en tarjeta completa (excepto botones)
         document.querySelectorAll('.service-card').forEach(card => {
             card.addEventListener('click', function (e) {
-                // Actualizado: sin details-btn
                 if (!e.target.closest('.favorite-btn, .book-btn, .btn')) {
                     const roomId = parseInt(this.dataset.id);
                     const room = servicesData.rooms.find(r => r.id === roomId);
@@ -339,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Mostrar detalles de habitación
+    // Detalles de un hike (modal)
     function showRoomDetails(room) {
         const modalHTML = `
             <div class="room-details-modal" id="roomDetailsModal">
@@ -352,18 +386,18 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                             <div class="room-info">
                                 <h2>${room.name}</h2>
-                                <p class="room-type">${room.type.charAt(0).toUpperCase() + room.type.slice(1)} Room</p>
+                                <p class="room-type">${room.type.charAt(0).toUpperCase() + room.type.slice(1)} Hike</p>
                                 <p class="room-description">${room.description}</p>
                                 
                                 <div class="details-grid">
                                     <div class="detail">
-                                        <strong>Size:</strong> ${room.size}
+                                        <strong>Distance:</strong> ${room.size}
                                     </div>
                                     <div class="detail">
                                         <strong>Capacity:</strong> ${room.capacity}
                                     </div>
                                     <div class="detail">
-                                        <strong>Price:</strong> $${room.price}/night
+                                        <strong>Price:</strong> $${room.price}/person
                                     </div>
                                 </div>
                                 
@@ -375,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 </div>
                                 
                                 <div class="modal-actions">
-                                    <button class="btn" onclick="window.location.href='reservations.html?room=${room.id}'">Book Now</button>
+                                    <button class="btn" onclick="window.location.href='reservations.html?room=${room.id}'">Book Hike</button>
                                     <button class="btn btn-secondary close-details-btn">Close</button>
                                 </div>
                             </div>
@@ -384,19 +418,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
         `;
-
-        // Remover modal existente si hay
         const existingModal = document.getElementById('roomDetailsModal');
         if (existingModal) existingModal.remove();
 
-        // Agregar nuevo modal al body
         document.body.insertAdjacentHTML('beforeend', modalHTML);
 
-        // Mostrar modal
         const modal = document.getElementById('roomDetailsModal');
         modal.style.display = 'block';
 
-        // Eventos del modal
         modal.querySelector('.close-modal').addEventListener('click', () => {
             modal.style.display = 'none';
             setTimeout(() => modal.remove(), 300);
@@ -407,7 +436,6 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => modal.remove(), 300);
         });
 
-        // Cerrar al hacer clic fuera
         modal.addEventListener('click', function (e) {
             if (e.target === this) {
                 modal.style.display = 'none';
@@ -416,7 +444,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Función para alternar favoritos
+    // Alternar favoritos
     function toggleFavorite(roomId) {
         const index = favorites.indexOf(roomId);
         const btn = document.querySelector(`.favorite-btn[data-id="${roomId}"]`);
@@ -454,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function () {
             favoritesList.innerHTML = `
                 <li class="empty-favorites">
                     <p>No favorites yet.</p>
-                    <p>Click the ♡ on any room to add it to your favorites.</p>
+                    <p>Click the ♡ on any hike to add it to your favorites.</p>
                 </li>
             `;
         } else {
@@ -468,8 +496,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             <img src="${room.image}" alt="${room.name}" onerror="this.src='images/default-room.jpg'">
                             <div class="favorite-info">
                                 <h4>${room.name}</h4>
-                                <p>$${room.price}/night</p>
-                                <p class="favorite-desc">${room.type.charAt(0).toUpperCase() + room.type.slice(1)} Room</p>
+                                <p>$${room.price}/person</p>
+                                <p class="favorite-desc">${room.type.charAt(0).toUpperCase() + room.type.slice(1)} Hike</p>
                             </div>
                         </div>
                         <div class="favorite-actions">
@@ -482,21 +510,20 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        // Agregar eventos a los botones de eliminar
         document.querySelectorAll('.remove-favorite').forEach(btn => {
             btn.addEventListener('click', function (e) {
                 e.stopPropagation();
                 const roomId = parseInt(this.dataset.id);
                 toggleFavorite(roomId);
-                showFavorites(); // Actualizar la lista
-                renderRooms(getActiveFilter(), searchInput.value); // Actualizar las tarjetas
+                showFavorites();
+                renderRooms(getActiveFilter());
             });
         });
 
         favoritesModal.style.display = 'block';
     }
 
-    // Obtener filtro activo
+    // Filtro activo
     function getActiveFilter() {
         const activeBtn = document.querySelector('.filter-btn.active');
         return activeBtn ? activeBtn.dataset.filter : 'all';
@@ -505,20 +532,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inicializar filtros
     filterButtons.forEach(btn => {
         btn.addEventListener('click', function () {
-            // Remover clase activa de todos los botones
             filterButtons.forEach(b => b.classList.remove('active'));
-            // Agregar clase activa al botón clickeado
             this.classList.add('active');
 
             const filter = this.dataset.filter;
-            renderRooms(filter, searchInput.value);
+            renderRooms(filter);
         });
-    });
-
-    // Evento de búsqueda
-    searchInput.addEventListener('input', function () {
-        const activeFilter = getActiveFilter();
-        renderRooms(activeFilter, this.value);
     });
 
     // Eventos del modal de favoritos
@@ -533,25 +552,25 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('favorites', JSON.stringify(favorites));
             updateFavoritesButton();
             showFavorites();
-            renderRooms(getActiveFilter(), searchInput.value);
+            renderRooms(getActiveFilter());
         }
     });
 
-    // Cerrar modal al hacer clic fuera
+    // Cerrar modal de favoritos al hacer clic fuera
     window.addEventListener('click', function (event) {
         if (event.target === favoritesModal) {
             favoritesModal.style.display = 'none';
         }
     });
 
-    // Cerrar modal con Escape
+    // Cerrar modales con Escape
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
-            const favoritesModal = document.getElementById('favoritesModal');
+            const favModal = document.getElementById('favoritesModal');
             const roomDetailsModal = document.getElementById('roomDetailsModal');
 
-            if (favoritesModal && favoritesModal.style.display === 'block') {
-                favoritesModal.style.display = 'none';
+            if (favModal && favModal.style.display === 'block') {
+                favModal.style.display = 'none';
             }
 
             if (roomDetailsModal && roomDetailsModal.style.display === 'block') {

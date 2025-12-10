@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jose Vega">
     <title>Services & Experiences - Hiking Tarija</title>
     <meta name="description"
-        content="Explore our accommodations, activities, and dining options at Inn Among Trees. From cozy rooms to guided forest adventures.">
+        content="Discover guided hikes, outdoor activities, and nature experiences in Tarija. Choose from half-day, full-day, multi-day, and challenging trails.">
 
+    <!-- Styles -->
     <link rel="stylesheet" href="styles/hiking.css">
     <link rel="stylesheet" href="styles/services.css">
+
+    <!-- Scripts -->
     <script src="scripts/main.js"></script>
     <script src="scripts/services.js"></script>
 </head>
@@ -43,33 +47,27 @@
     <!-- Hero Section -->
     <section class="services-hero">
         <div class="hero-content">
-            <h1>Services & Experiences</h1>
-            <p>Discover everything we offer for your perfect countryside retreat</p>
+            <h1>Hiking Services & Adventures</h1>
+            <p>Explore our guided trails, outdoor activities, and unique experiences across Tarija.</p>
         </div>
     </section>
 
     <!-- Main Content -->
     <main class="main-content services-main">
         <div class="container">
-            <!-- Search & Filters -->
+            <!-- Filters & Favorites -->
             <section class="filters-section">
                 <h2 class="section-title">Find Your Ideal Hike</h2>
-
-                <!-- Search Box -->
-                <div class="search-box">
-                    <input type="text" id="serviceSearch" placeholder="Search trails by name, area, or difficulty..."
-                        aria-label="Search services">
-                </div>
 
                 <!-- Experience Type Filters -->
                 <div class="filter-section">
                     <h3>Filter by Trail Type</h3>
                     <div class="filter-buttons">
                         <button class="filter-btn active" data-filter="all">All Hikes</button>
-                        <button class="filter-btn" data-filter="standard">Half-Day</button>
-                        <button class="filter-btn" data-filter="deluxe">Full-Day</button>
-                        <button class="filter-btn" data-filter="family">Multi-Day Treks</button>
-                        <button class="filter-btn" data-filter="honeymoon">Challenging</button>
+                        <button class="filter-btn" data-filter="Half-day">Half-Day</button>
+                        <button class="filter-btn" data-filter="full day">Full-Day</button>
+                        <button class="filter-btn" data-filter="Multi-Day Treks">Multi-Day Treks</button>
+                        <button class="filter-btn" data-filter="Challenging">Challenging</button>
                     </div>
                 </div>
 
@@ -81,20 +79,22 @@
                 </div>
             </section>
 
-            <!-- Rooms & Accommodations -->
+            <!-- Hikes (antes Rooms & Accommodations) -->
             <section class="rooms-section">
-                <h2 class="section-title">Our Accommodations</h2>
-                <p class="section-subtitle">Choose from our selection of carefully designed rooms and cabins</p>
+                <h2 class="section-title">Your Path Awaits</h2>
+                <p class="section-subtitle">
+                    Find hikes that match your pace, from peaceful nature walks to challenging mountain ascents.
+                </p>
 
                 <div class="services-grid" id="roomsContainer">
-                    <!-- Rooms will be loaded dynamically via JavaScript -->
+                    <!-- Hikes will be loaded dynamically via JavaScript -->
                 </div>
             </section>
 
             <!-- Activities & Experiences -->
             <section class="activities-section">
                 <h2 class="section-title">Other Activities</h2>
-                <p class="section-subtitle">Enjoy nature in a different way</p>
+                <p class="section-subtitle">Enjoy nature in a different way.</p>
 
                 <div class="services-grid" id="activitiesContainer">
                     <!-- Activities will be loaded dynamically via JavaScript -->
@@ -104,10 +104,10 @@
             <!-- Booking CTA -->
             <section class="booking-cta">
                 <div class="cta-content">
-                    <h2>Ready to Experience It All?</h2>
-                    <p>Book your stay and add these experiences to make your retreat unforgettable</p>
+                    <h2>Ready for Your Next Trek?</h2>
+                    <p>Join one of our guided hikes and explore Tarija’s waterfalls, canyons, and mountain trails.</p>
                     <div class="cta-buttons">
-                        <a href="reservations.html" class="btn">Book Your Stay</a>
+                        <a href="reservations.html" class="btn">Book Your Adventure</a>
                         <a href="reservations.html#contact" class="btn btn-secondary">Contact for Details</a>
                     </div>
                 </div>
@@ -165,11 +165,13 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Hiking Tarija. All rights reserved. | <a href="#"
-                    style="color: rgba(255,255,255,0.8);">Privacy Policy</a> | <a href="#"
-                    style="color: rgba(255,255,255,0.8);">Terms of Service</a></p>
+            <p>&copy; 2025 Hiking Tarija. All rights reserved. |
+                <a href="#" style="color: rgba(255,255,255,0.8);">Privacy Policy</a> |
+                <a href="#" style="color: rgba(255,255,255,0.8);">Terms of Service</a>
+            </p>
         </div>
     </footer>
 
 </body>
 </html>
+

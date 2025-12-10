@@ -9,44 +9,44 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             id: 1,
             image: 'images/marquiri.jpg',
-            alt: 'Cozy cabin interior with fireplace',
-            title: 'Rustic Cabin Interior',
-            description: 'Warm and inviting rooms with comfortable furnishings'
+            alt: 'Marquiri waterfall inside a canyon',
+            title: 'Marquiri Waterfall',
+            description: 'A dramatic canyon waterfall offering one of Tarija’s most iconic hiking views.'
         },
         {
             id: 2,
             image: 'images/pilaya.jpg',
-            alt: 'Forest hiking trail',
-            title: 'Guided Nature Walks',
-            description: 'Explore our extensive network of hiking trails'
+            alt: 'Pilaya Canyon viewpoint',
+            title: 'Pilaya Canyon',
+            description: 'Explore breathtaking cliffs and vast landscapes at one of Bolivia’s deepest canyons.'
         },
         {
             id: 3,
             image: 'images/coimata.jpg',
-            alt: 'Outdoor dining area',
-            title: 'Al Fresco Dining',
-            description: 'Enjoy meals in our beautiful outdoor setting'
+            alt: 'Small waterfall in Coimata',
+            title: 'Coimata Cascades',
+            description: 'Peaceful waterfalls surrounded by greenery, perfect for relaxing nature walks.'
         },
         {
             id: 4,
             image: 'images/jurina.jpg',
-            title: 'Bird Watching Spot',
-            alt: 'Bird watching in the forest',
-            description: 'Perfect location for bird enthusiasts'
+            alt: 'Hidden waterfall in the forest',
+            title: 'Jurina Waterfalls',
+            description: 'A quiet forest oasis with scenic cascades ideal for photography and exploration.'
         },
         {
             id: 5,
             image: 'images/cover.jpg',
-            alt: 'Evening bonfire',
-            title: 'Evening Gatherings',
-            description: 'Cozy bonfires under the stars'
+            alt: 'Ancient stone trail in Tajzara',
+            title: 'Inca Trail of Tarija',
+            description: 'Walk historic stone paths with sweeping highland views through Tajzara’s Inca Trail.'
         },
         {
             id: 6,
             image: 'images/cover2.jpg',
-            alt: 'Wellness spa area',
-            title: 'Wellness Center',
-            description: 'Relax and rejuvenate in our spa'
+            alt: 'Nature landscape in Tajzara',
+            title: 'Tajzara Wilderness',
+            description: 'Wide open highland scenery where wetlands, mountains, and wildlife meet.'
         }
     ];
 

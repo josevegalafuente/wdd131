@@ -2,7 +2,7 @@
 
 .about-hero {
     height: 60vh;
-    background: linear-gradient(rgba(206, 201, 194, 0.7), rgba(167, 167, 167, 0.5)),
+    background: linear-gradient(rgba(43, 42, 40, 0.7), rgba(66, 61, 61, 0.5)),
         url('../images/cover2.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -49,6 +49,10 @@
 .mission-values {
     padding: 4rem 0;
     background-color: var(--cream);
+}
+
+.mission-values .section-title {
+    color: #C98D2C;
 }
 
 .values-grid {
@@ -114,6 +118,7 @@
 
 .team-info {
     padding: 1.5rem;
+    text-align: center;
 }
 
 .team-role {
@@ -128,7 +133,22 @@
     margin-bottom: 1rem;
 }
 
+.team-info h3 {
+    color: #C98D2C;
+}
+.team-role,
+.team-years,
+.team-bio {
+    color: #333333;
+}
+
+
 /* Timeline */
+
+.timeline-section .section-title {
+    color: #C98D2C;
+}
+
 .timeline-section {
     padding: 4rem 0;
     background-color: var(--cream);
@@ -269,8 +289,8 @@
 /* Contact CTA */
 .contact-cta {
     padding: 4rem 0;
-    background: linear-gradient(rgba(45, 80, 22, 0.9), rgba(45, 80, 22, 0.8)),
-        url('../images/forest.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(39, 41, 38, 0.9), rgba(28, 32, 25, 0.8)),
+        url('../images/marquiri.jpg') center/cover no-repeat;
     color: var(--white);
     text-align: center;
 }

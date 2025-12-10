@@ -1,6 +1,6 @@
 /**
  * ABOUT.JS - Funcionalidad para la página "About Us"
- * Incluye: timeline interactivo, carrusel de premios, galería del equipo
+ * Incluye: timeline interactivo, galería del equipo y contador de visitas
  */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -79,55 +79,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
-    // ===== DATOS DE PREMIOS =====
-    const awards = [
-        {
-            id: 1,
-            name: 'Green Tourism Gold Award',
-            year: '2023',
-            organization: 'Sustainable Tourism Council',
-            description: 'Highest recognition for environmental practices in hospitality'
-        },
-        {
-            id: 2,
-            name: 'Best Eco-Retreat',
-            year: '2022',
-            organization: 'Travel & Nature Magazine',
-            description: 'Readers\' Choice Award for sustainable travel'
-        },
-        {
-            id: 3,
-            name: 'Community Impact Award',
-            year: '2021',
-            organization: 'Local Business Association',
-            description: 'For outstanding support of local suppliers and employment'
-        },
-        {
-            id: 4,
-            name: 'Excellence in Hospitality',
-            year: '2020',
-            organization: 'State Tourism Board',
-            description: 'Recognition for exceptional guest service'
-        },
-        {
-            id: 5,
-            name: 'Wildlife Conservation Partner',
-            year: '2019',
-            organization: 'Forest Preservation Society',
-            description: 'For habitat protection and wildlife monitoring efforts'
-        }
-    ];
-
     // ===== ELEMENTOS DEL DOM =====
     const teamGrid = document.getElementById('teamGrid');
     const timeline = document.getElementById('timeline');
-    const awardsSlider = document.getElementById('awardsSlider');
 
     // ===== RENDERIZAR EQUIPO =====
     function renderTeam() {
         if (!teamGrid) return;
 
-        // Usar template literal para construir el HTML
         teamGrid.innerHTML = teamMembers.map(member => `
             <div class="team-card">
                 <div class="team-image">
@@ -158,36 +117,14 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `).join('');
 
-        // Agregar interactividad
         addTimelineInteractivity();
-    }
-
-    // ===== RENDERIZAR PREMIOS =====
-    function renderAwards() {
-        if (!awardsSlider) return;
-
-        awardsSlider.innerHTML = awards.map(award => `
-            <div class="award-card">
-                <div class="award-header">
-                    <span class="award-year">${award.year}</span>
-                    <h3>${award.name}</h3>
-                </div>
-                <div class="award-body">
-                    <p class="award-org">By: ${award.organization}</p>
-                    <p class="award-desc">${award.description}</p>
-                </div>
-            </div>
-        `).join('');
-
-        // Inicializar carrusel
-        initializeAwardsCarousel();
     }
 
     // ===== INTERACTIVIDAD DE TIMELINE =====
     function addTimelineInteractivity() {
         const timelineItems = document.querySelectorAll('.timeline-item');
 
-        // Observador de intersección para animaciones
+        // Animación al hacer scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -198,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         timelineItems.forEach(item => observer.observe(item));
 
-        // Agregar tooltips
+        // Click para ver detalle
         timelineItems.forEach(item => {
             const year = item.querySelector('.timeline-year').textContent;
             item.title = `Click to learn more about ${year}`;
@@ -210,62 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         });
-    }
-
-    // ===== CARRUSEL DE PREMIOS =====
-    function initializeAwardsCarousel() {
-        if (!awardsSlider) return;
-
-        let currentIndex = 0;
-        const awardCards = awardsSlider.querySelectorAll('.award-card');
-        const totalAwards = awardCards.length;
-
-        // Mostrar solo 3 premios a la vez
-        function showAwards() {
-            awardCards.forEach((card, index) => {
-                card.style.display = 'none';
-                if (index >= currentIndex && index < currentIndex + 3) {
-                    card.style.display = 'block';
-                }
-            });
-        }
-
-        // Botones de navegación
-        const prevBtn = document.createElement('button');
-        prevBtn.className = 'carousel-btn prev';
-        prevBtn.innerHTML = '‹';
-        prevBtn.addEventListener('click', () => {
-            currentIndex = Math.max(0, currentIndex - 1);
-            showAwards();
-        });
-
-        const nextBtn = document.createElement('button');
-        nextBtn.className = 'carousel-btn next';
-        nextBtn.innerHTML = '›';
-        nextBtn.addEventListener('click', () => {
-            currentIndex = Math.min(totalAwards - 3, currentIndex + 1);
-            showAwards();
-        });
-
-        awardsSlider.parentElement.appendChild(prevBtn);
-        awardsSlider.parentElement.appendChild(nextBtn);
-
-        // Auto-rotación cada 5 segundos
-        let autoRotate = setInterval(() => {
-            currentIndex = (currentIndex + 1) % (totalAwards - 2);
-            showAwards();
-        }, 5000);
-
-        // Pausar auto-rotación al interactuar
-        awardsSlider.addEventListener('mouseenter', () => clearInterval(autoRotate));
-        awardsSlider.addEventListener('mouseleave', () => {
-            autoRotate = setInterval(() => {
-                currentIndex = (currentIndex + 1) % (totalAwards - 2);
-                showAwards();
-            }, 5000);
-        });
-
-        showAwards();
     }
 
     // ===== MOSTRAR DETALLE DE TIMELINE =====
@@ -297,11 +178,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // ===== CONTADOR DE VISITAS =====
     function updateVisitCounter() {
         const visitKey = 'aboutPageVisits';
-        let visits = parseInt(localStorage.getItem(visitKey) || '0');
+        let visits = parseInt(localStorage.getItem(visitKey) || '0', 10);
         visits++;
         localStorage.setItem(visitKey, visits.toString());
 
-        // Mostrar contador sutilmente
         const visitCounter = document.createElement('div');
         visitCounter.className = 'visit-counter';
         visitCounter.innerHTML = `
@@ -321,21 +201,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.body.appendChild(visitCounter);
 
-        // Ocultar después de 5 segundos
         setTimeout(() => {
             visitCounter.style.opacity = '0.5';
         }, 3000);
-    }
-
-    // ===== INICIALIZAR =====
-    function initializeAboutPage() {
-        renderTeam();
-        renderTimeline();
-        renderAwards();
-        updateVisitCounter();
-
-        // Lazy load images
-        lazyLoadAboutImages();
     }
 
     // ===== LAZY LOAD IMÁGENES =====
@@ -358,14 +226,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // ===== EXPORTAR FUNCIONES =====
-    window.getTeamMembers = function () {
-        return teamMembers;
-    };
-
-    window.getTimelineEvents = function () {
-        return timelineEvents;
-    };
+    // ===== INICIALIZAR PÁGINA ABOUT =====
+    function initializeAboutPage() {
+        renderTeam();
+        renderTimeline();
+        updateVisitCounter();
+        lazyLoadAboutImages();
+    }
 
     // Inicializar
     initializeAboutPage();

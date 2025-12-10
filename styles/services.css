@@ -75,6 +75,13 @@
     position: relative;
 }
 
+.service-card {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 .service-card:hover {
     transform: translateY(-5px);
 }
@@ -127,6 +134,10 @@
 .favorite-btn:hover {
     transform: scale(1.15);
     background: white;
+}
+
+.rooms-section .section-title {
+    color: #C98D2C;
 }
 
 /* Featured Badge */
@@ -260,7 +271,7 @@
 
 /* Book Button Styles */
 .book-btn {
-    background-color: var(--forest-green);
+    background-color: var(--wood-brown);
     color: white;
     border: none;
     padding: 0.9rem 1.8rem;
@@ -273,7 +284,7 @@
 }
 
 .book-btn:hover {
-    background-color: #1e5631;
+    background-color: #8b5a2b;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(30, 86, 49, 0.3);
 }
@@ -428,6 +439,10 @@
 }
 
 /* Additional Services */
+.activities-section .section-title {
+    color: #C98D2C;
+}
+
 .additional-services {
     background-color: var(--cream);
     padding: 2rem;
@@ -471,11 +486,12 @@
     font-size: 0.9rem;
 }
 
+
 /* Booking CTA */
 .booking-cta {
     padding: 4rem 0;
-    background: linear-gradient(rgba(45, 80, 22, 0.9), rgba(45, 80, 22, 0.8)),
-        url('../images/forest.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(51, 50, 48, 0.9), rgba(63, 61, 58, 0.8)),
+        url('../images/camping.jpg') center/cover no-repeat;
     color: var(--white);
     text-align: center;
 }
@@ -517,7 +533,7 @@
 
 .booking-cta .btn {
     background-color: white;
-    color: var(--forest-green);
+    color: var(--white);
     border: none;
     padding: 0.9rem 2rem;
     font-size: 1rem;

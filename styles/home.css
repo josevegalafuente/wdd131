@@ -4,7 +4,7 @@
 .hero {
     height: 80vh;
     min-height: 500px;
-    background: linear-gradient(rgba(168, 161, 98, 0.7), rgba(94, 79, 46, 0.5)),
+    background: linear-gradient(rgba(31, 31, 29, 0.7), rgba(95, 92, 84, 0.5)),
         url('../images/cover.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -52,6 +52,14 @@
     padding-right: 2rem;
 }
 
+.welcome-text .btn {
+    display: block;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+    width: fit-content; 
+}
+
+
 .welcome-image img {
     width: 100%;
     height: 400px;
@@ -66,6 +74,11 @@
 }
 
 /* Gallery Section */
+
+.gallery-section .section-title {
+    color: #C98D2C;
+}
+
 .gallery-section {
     padding: 4rem 0;
     background-color: var(--cream);
@@ -138,10 +151,10 @@
 .gallery-item:hover .gallery-overlay {
     transform: translateY(0);
     background: linear-gradient(to top,
-            rgba(45, 80, 22, 0.9) 0%,
+            rgba(177, 119, 32, 0.9) 0%,
             /* Usa tu color forest-green */
-            rgba(45, 80, 22, 0.7) 50%,
-            rgba(45, 80, 22, 0.4) 100%);
+            rgba(145, 117, 59, 0.7) 50%,
+            rgba(34, 32, 32, 0.4) 100%);
 }
 
 .gallery-controls {
@@ -183,11 +196,20 @@
     margin-bottom: 1rem;
 }
 
+.services-preview .service-card h3 {
+    color: #C98D2C;
+}
+
+.services-preview .service-card p {
+    color: #333333;
+}
+
+
 /* Call to Action Section */
 .cta-section {
     padding: 4rem 0;
-    background: linear-gradient(rgba(184, 166, 88, 0.9), rgba(45, 80, 22, 0.8)),
-        url('../images/cover.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(66, 66, 64, 0.9), rgba(58, 61, 55, 0.8)),
+        url('../images/tajzara.jpg') center/cover no-repeat;
     color: var(--white);
     text-align: center;
 }
