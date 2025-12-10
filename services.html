@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Experiences - Hiking Tarija</title>
+    <meta name="description"
+        content="Explore our accommodations, activities, and dining options at Inn Among Trees. From cozy rooms to guided forest adventures.">
+
+    <link rel="stylesheet" href="styles/hiking.css">
+    <link rel="stylesheet" href="styles/services.css">
+    <script src="scripts/main.js"></script>
+    <script src="scripts/services.js"></script>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Hiking Tarija Logo" class="logo-img">
+                <span class="logo-text">Hiking Tarija</span>
+            </a>
+
+            <!-- Hamburger menu for mobile -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="hero-content">
+            <h1>Services & Experiences</h1>
+            <p>Discover everything we offer for your perfect countryside retreat</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content services-main">
+        <div class="container">
+            <!-- Search & Filters -->
+            <section class="filters-section">
+                <h2 class="section-title">Find Your Ideal Hike</h2>
+
+                <!-- Search Box -->
+                <div class="search-box">
+                    <input type="text" id="serviceSearch" placeholder="Search trails by name, area, or difficulty..."
+                        aria-label="Search services">
+                </div>
+
+                <!-- Experience Type Filters -->
+                <div class="filter-section">
+                    <h3>Filter by Trail Type</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Hikes</button>
+                        <button class="filter-btn" data-filter="standard">Half-Day</button>
+                        <button class="filter-btn" data-filter="deluxe">Full-Day</button>
+                        <button class="filter-btn" data-filter="family">Multi-Day Treks</button>
+                        <button class="filter-btn" data-filter="honeymoon">Challenging</button>
+                    </div>
+                </div>
+
+                <!-- Favorites Button -->
+                <div class="favorites-section">
+                    <button class="btn btn-secondary" id="favoritesBtn">
+                        Favorites (0)
+                    </button>
+                </div>
+            </section>
+
+            <!-- Rooms & Accommodations -->
+            <section class="rooms-section">
+                <h2 class="section-title">Our Accommodations</h2>
+                <p class="section-subtitle">Choose from our selection of carefully designed rooms and cabins</p>
+
+                <div class="services-grid" id="roomsContainer">
+                    <!-- Rooms will be loaded dynamically via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Activities & Experiences -->
+            <section class="activities-section">
+                <h2 class="section-title">Other Activities</h2>
+                <p class="section-subtitle">Enjoy nature in a different way</p>
+
+                <div class="services-grid" id="activitiesContainer">
+                    <!-- Activities will be loaded dynamically via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Booking CTA -->
+            <section class="booking-cta">
+                <div class="cta-content">
+                    <h2>Ready to Experience It All?</h2>
+                    <p>Book your stay and add these experiences to make your retreat unforgettable</p>
+                    <div class="cta-buttons">
+                        <a href="reservations.html" class="btn">Book Your Stay</a>
+                        <a href="reservations.html#contact" class="btn btn-secondary">Contact for Details</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Favorites Modal -->
+    <div class="modal" id="favoritesModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Your Favorites</h2>
+            <div class="modal-body">
+                <ul id="favoritesList">
+                    <!-- Favorites will be loaded here -->
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="clearFavoritesBtn">Clear All Favorites</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hiking Tarija</h3>
+                <p>123 Sucre<br>
+                    San Roque, Tarija<br>
+                    Bolivia</p>
+                <p>📞 + 591 87654321<br>
+                    ✉️ info@hikingtarija.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="TripAdvisor">⭐</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hiking Tarija. All rights reserved. | <a href="#"
+                    style="color: rgba(255,255,255,0.8);">Privacy Policy</a> | <a href="#"
+                    style="color: rgba(255,255,255,0.8);">Terms of Service</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

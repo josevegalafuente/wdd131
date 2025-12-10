@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations & Contact - Hiking Tarija</title>
+    <meta name="description"
+        content="Book your stay at Hiking Tarija. Check availability, make reservations, or contact us for inquiries.">
+
+    <link rel="stylesheet" href="styles/hiking.css">
+    <link rel="stylesheet" href="styles/reservations.css">
+    <script src="scripts/main.js"></script>
+    <script src="scripts/reservations.js"></script>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Hiking Tarija Logo" class="logo-img">
+                <span class="logo-text">Hiking Tarija</span>
+            </a>
+
+            <!-- Hamburger menu for mobile -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reservations.html" class="active">Reservations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="reservations-hero">
+        <div class="hero-content">
+            <h1>Plan Your Next Trek</h1>
+            <p>Start your adventure through Tarija’s trails and stunning natural landscapes.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content reservations-main">
+        <div class="container">
+            <div class="reservation-container">
+                <!-- Left Column: Reservation Form -->
+                <div class="reservation-form-container">
+                    <h2 class="section-title">Your Adventure Awaits</h2>
+
+                    <form id="reservationForm" class="reservation-form">
+                        <!-- Room Selection -->
+                        <div class="form-group">
+                            <label for="roomType">Experience Type *</label>
+                            <select id="roomType" name="roomType" required aria-required="true">
+                                <option value="">Select an experience type</option>
+                                <!-- Options will be populated by JavaScript -->
+                            </select>
+                        </div>
+
+                        <!-- Dates -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkIn">Check-in Date *</label>
+                                <input type="date" id="checkIn" name="checkIn" required aria-required="true">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="checkOut">Check-out Date *</label>
+                                <input type="date" id="checkOut" name="checkOut" required aria-required="true">
+                            </div>
+                        </div>
+
+                        <!-- Guests -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests">Number of Guests *</label>
+                                <input type="number" id="guests" name="guests" min="1" max="10" value="2" required
+                                    aria-required="true">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="children">Children (under 12)</label>
+                                <input type="number" id="children" name="children" min="0" max="5" value="0">
+                            </div>
+                        </div>
+
+                        <!-- Guest Information -->
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required aria-required="true"
+                                placeholder="Your full name">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required aria-required="true"
+                                    placeholder="your.email@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                            </div>
+                        </div>
+
+                        <!-- Special Requests -->
+                        <div class="form-group">
+                            <label for="specialRequests">Special Requests</label>
+                            <textarea id="specialRequests" name="specialRequests" rows="3"
+                                placeholder="Any special requirements or requests..."></textarea>
+                        </div>
+
+                        <!-- Additional Services -->
+                        <section class="services-section">
+                            <h3>Additional Services</h3>
+                            <p>Enhance your stay with these optional services:</p>
+                            <div id="servicesContainer">
+                                <!-- Services will be loaded by JavaScript -->
+                            </div>
+                        </section>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="submit" id="bookBtn" class="btn">
+                                Book Now
+                            </button>
+                            <button type="button" id="clearBtn" class="btn btn-secondary">
+                                Clear Form
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Selected Room Details -->
+                    <div class="selected-room">
+                        <h3>Selected Room Details</h3>
+                        <div id="roomDetails">
+                            <!-- Room details will be loaded by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Reservation Summary & Contact -->
+                <div class="reservation-sidebar">
+                    <!-- Price Summary -->
+                    <div class="reservation-summary" id="reservationSummary">
+                        <h3>Reservation Summary</h3>
+                        <p class="summary-placeholder">Fill out the form to see your reservation details</p>
+                    </div>
+
+                    <!-- Total Price -->
+                    <div class="total-price-card">
+                        <h3>Estimated Total</h3>
+                        <div class="total-amount" id="totalDisplay">$0.00</div>
+                        <p class="tax-note">* Taxes and fees not included</p>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <section class="page-title">
+                <h1>Contact Us</h1>
+                <p>Have questions about rafting trips, group bookings, or gear? We’re here to help! Reach out for
+                    details, safety info, or
+                    to plan your next river adventure. Our friendly team is ready to guide you every step of the way.
+                </p>
+            </section>
+            <section class="company">
+                <div class="company-card">
+                    <h2>Hiking Tarija</h2>
+                    <address>
+                        <p>1234, San Roque<br>Tarija, Bolivia</p>
+                        <p><strong>Phone:</strong> <a href="tel:+19595559999">+1 (959) 555-9999</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@whitewater.com">info@hiketarija.com</a></p>
+                    </address>
+                </div>
+                <div class="company-map">
+                    <iframe title="White Water Rafting Company — Map"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d209444.8649999328!2d-121.6548396970524!3d38.1052306996879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sus!4v1759608014711!5m2!1ses-419!2sus"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <!-- Contact Form Section -->
+            <section class="contact-form-section" id="contact">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Have questions? Send us a message and we'll respond within 24 hours.</p>
+
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Full Name *</label>
+                                <input type="text" id="contactName" name="contactName" required placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address *</label>
+                                <input type="email" id="contactEmail" name="contactEmail" required
+                                    placeholder="your.email@example.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <select id="contactSubject" name="contactSubject">
+                                <option value="">Select a topic</option>
+                                <option value="reservation">Reservation Inquiry</option>
+                                <option value="availability">Availability Question</option>
+                                <option value="special_request">Special Request</option>
+                                <option value="group_booking">Group Booking</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="5" required
+                                placeholder="How can we help you?"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hiking Tarija</h3>
+                <p>123 Sucre<br>
+                    San Roque, Tarija<br>
+                    Bolivia</p>
+                <p>📞 + 591 87654321<br>
+                    ✉️ info@hikingtarija.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="TripAdvisor">⭐</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hiking Tarija. All rights reserved. | <a href="#"
+                    style="color: rgba(255,255,255,0.8);">Privacy Policy</a> | <a href="#"
+                    style="color: rgba(255,255,255,0.8);">Terms of Service</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

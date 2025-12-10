@@ -1,81 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WDD 131 – Dynamic Web Fundamentals - Jose Vega</title>
-  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals — Jose Vega. Homepage with links, resources, and projects for class practice." />
-  <meta name="author" content="Jose Vega" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=EB+Garamond:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/base.css">
-  <script src="scripts/getdates.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking Tarija – Explore the Best Trails in Southern Bolivia</title>
+    <meta name="description"
+        content="Discover the most beautiful hiking trails in Tarija. Explore routes, difficulty levels, landscapes, and tips to enjoy unforgettable outdoor adventures in Southern Bolivia.">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/hiking.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <script src="scripts/main.js"></script>
+    <script src="scripts/gallery.js"></script>
+
 </head>
+
 <body>
-  <header class="site-header">
-    <span id="course-title">
-      WDD 131: Dynamic Web Fundamentals — <strong class="highlight-name">Jose Vega</strong>
-    </span>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Hiking Tarija Logo" class="logo-img">
+                <span class="logo-text">Hiking Tarija</span>
+            </a>
 
-    <nav class="top-nav">
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a>
-      <a href="https://www.churchofjesuschrist.org/study/scriptures" target="_blank" rel="noopener">Scripture</a>
-      <a href="./final-project/" target="_blank" rel="noopener">Final Project</a>
-    </nav>
-  </header>
+            <!-- Hamburger menu for mobile -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-  <main class="page-grid">
-    <section class="card">
-      <div class="card-bar">
-        <h1>About Me</h1>
-      </div>
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+            </ul>
+        </nav>
+    </header>
 
-      <div class="about-grid">
-        <div class="about-text">
-          <p>My name is José Vega, and I live in Tarija, Bolivia, a beautiful city surrounded by mountains and vineyards. I’m currently studying web development and working on small but meaningful projects for my WDD 131 course. Each new project helps me understand the creative and technical sides of building websites, from structure and design to functionality. I really enjoy the process of learning something new every day, especially when I can see how it connects to real-world technology. Beyond my studies, I love spending quality time with my family, sharing meals, talking about life, and enjoying the simple moments that keep me inspired and grounded.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Explore Tarija One Step at a Time</h1>
+            <p>Follow trails full of life, color, and history. Here you’ll find hikes for every level, crafted for those who want to enjoy the true essence of Tarija’s nature.</p>
+            <a href="reservations.html" class="btn">Book Now</a>
         </div>
-
-        <figure class="about-photo">
-          <img src="images/profile.jpg" alt="Photo of Jose Vega" width="260" height="320" loading="lazy">
-        </figure>
-      </div>
-
-      <hr class="section-rule">
-
-      <h3 class="place-title">Tarija</h3>
-
-      <div class="place-grid">
-        <figure class="flag">
-          <img src="images/flag.jpg" alt="Official flag of Tarija" width="110" height="70" loading="lazy">
-          <figcaption>Flag of Tarija</figcaption>
-        </figure>
-
-        <p class="place-text">I live in Tarija, a beautiful region surrounded by mountains and valleys. It’s a place full of natural wonders, rivers, waterfalls, and trails perfect for hiking and exploring. Not far away lies one of the world’s largest canyons, a reminder of how vast and stunning nature can be. Tarija’s peaceful landscapes make it an ideal place to enjoy the outdoors and feel connected to nature.</p>
-      </div>
     </section>
 
-    <aside class="card">
-      <div class="card-bar">
-        <h2>Web Dev Resources</h2>
-      </div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="container">
+                <h2 class="section-title">This is Hiking Tarija</h2>
+                <div class="welcome-content">
+                    <div class="welcome-text">
+                        <p>Tarija is a land shaped by mountains, open skies, and winding trails that invite curiosity. Hiking Tarija was created to help travelers and locals alike discover the region’s diverse landscapes—from peaceful riversides to rugged high-altitude paths. Here, every route tells a story and every step brings you closer to the natural spirit of southern Bolivia.</p>
+                        <p>Whether you're searching for beginner-friendly walks, scenic photo opportunities, or demanding treks that test your endurance, our guides offer clear insights to help you prepare. Explore trail features, safety tips, route durations, and hidden gems as you plan your next outdoor adventure across Tarija’s unforgettable terrain.</p>
+                        <a href="about.html" class="btn btn-secondary mt-2">Our Story</a>
+                    </div>
+                    <div class="welcome-image">
+                        <img src="images/cover2.jpg" alt="Cozy cabin among trees" class="lazy-img" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <ul class="resource-list">
-        <li><a href="https://dev.to" target="_blank" rel="noopener">Dev.to Community</a></li>
-        <li><a href="https://www.smashingmagazine.com/" target="_blank" rel="noopener">Smashing Magazine</a></li>
-        <li><a href="https://css-tricks.com/" target="_blank" rel="noopener">CSS-Tricks</a></li>
-        <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener">W3Schools</a></li>
-        <li><a href="https://www.udemy.com/" target="_blank" rel="noopener">Udemy</a></li>
-        <li><a href="https://dummyimage.com/" target="_blank" rel="noopener">Image Placeholder</a></li>
-      </ul>
-    </aside>
-  </main>
+        <!-- Featured Gallery -->
+        <section class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">Explore Tarija’s Outdoor Wonders</h2>
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Images will be loaded dynamically via JavaScript -->
+                </div>
+                <div class="gallery-controls">
+                    <button class="btn btn-secondary" id="prevBtn">Previous</button>
+                    <button class="btn" id="nextBtn">Next</button>
+                </div>
+            </div>
+        </section>
 
-  <footer class="site-footer">
-    <p>&copy; <span id="currentyear"></span>Jose Vega • Bolivia</p>
-    <p id="lastModified" class="lm"></p>
-  </footer>
+        <!-- Featured Services -->
+        <section class="services-preview">
+            <div class="container">
+                <h2 class="section-title">What We Offer</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🛏️</div>
+                        <h3>Cozy Accommodations</h3>
+                        <p>Comfortable rooms with forest views, fireplaces, and all modern amenities while maintaining
+                            rustic charm.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🍽️</div>
+                        <h3>Farm-to-Table Dining</h3>
+                        <p>Fresh meals prepared with locally sourced ingredients. Special dietary needs accommodated.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🚶</div>
+                        <h3>Guided Activities</h3>
+                        <p>Hiking, bird watching, horseback riding, and seasonal activities guided by local experts.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="services.html" class="btn">View All Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Set Your Journey in Motion</h2>
+                    <p>Tarija’s landscapes are calling—offering open skies, winding trails, and moments that stay with you long after the hike is over. Choose a path and step into something extraordinary.</p>
+                    <a href="reservations.html" class="btn">Discover Paths</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hiking Tarija</h3>
+                <p>123 Sucre<br>
+                    San Roque, Tarija<br>
+                    Bolivia</p>
+                <p>📞 + 591 87654321<br>
+                    ✉️ info@hikingtarija.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="TripAdvisor">⭐</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hiking Tarija. All rights reserved. | <a href="#"
+                    style="color: rgba(255,255,255,0.8);">Privacy Policy</a> | <a href="#"
+                    style="color: rgba(255,255,255,0.8);">Terms of Service</a></p>
+        </div>
+    </footer>
+
 </body>
 </html>
-

@@ -1,0 +1,343 @@
+/* ===== ESTILOS PARA ABOUT PAGE ===== */
+
+.about-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(206, 201, 194, 0.7), rgba(167, 167, 167, 0.5)),
+        url('../images/cover2.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 0;
+}
+
+.about-hero .hero-content p {
+    color: #E8F4F8;
+    font-size: 1.2rem;
+    opacity: 0.95;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+/* Our Story */
+.our-story {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* Mission & Values */
+.mission-values {
+    padding: 4rem 0;
+    background-color: var(--cream);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Team Section */
+.team-section {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-card {
+    background-color: var(--cream);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.team-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-image img {
+    transform: scale(1.05);
+}
+
+.team-info {
+    padding: 1.5rem;
+}
+
+.team-role {
+    color: var(--wood-brown);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.team-years {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+/* Timeline */
+.timeline-section {
+    padding: 4rem 0;
+    background-color: var(--cream);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--wood-brown);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+    width: 45%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.timeline-item.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 55%;
+}
+
+.timeline-content {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.timeline-year {
+    background-color: var(--forest-green);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.timeline-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Awards */
+.awards-section {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.awards-slider {
+    display: flex;
+    gap: 6rem;
+    overflow-x: auto;
+    padding: 2rem 0;
+    scroll-behavior: smooth;
+}
+
+.award-card {
+    flex: 0 0 300px;
+    background-color: var(--cream);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.award-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--wood-brown);
+    padding-bottom: 1.2rem;
+    /* Aumenta este valor */
+    padding-top: 0.5rem;
+    /* Añade padding superior */
+}
+
+.award-year {
+    background-color: var(--wood-brown);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.award-org {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--forest-green);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.carousel-btn.prev {
+    left: -20px;
+}
+
+.carousel-btn.next {
+    right: -20px;
+}
+
+/* Contact CTA */
+.contact-cta {
+    padding: 4rem 0;
+    background: linear-gradient(rgba(45, 80, 22, 0.9), rgba(45, 80, 22, 0.8)),
+        url('../images/forest.jpg') center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+}
+
+.contact-cta h2 {
+    color: var(--white);
+}
+
+.contact-cta p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* Timeline Modal */
+.timeline-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.timeline-modal .modal-content {
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.modal-icon {
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        width: calc(100% - 60px);
+        left: 60px !important;
+    }
+
+    .awards-slider {
+        padding: 1rem;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+}
