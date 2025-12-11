@@ -1,11 +1,6 @@
-/**
- * ABOUT.JS - Funcionalidad para la página "About Us"
- * Incluye: timeline interactivo, galería del equipo y contador de visitas
- */
-
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ===== DATOS DEL EQUIPO =====
+
     const teamMembers = [
         {
             id: 1,
@@ -30,60 +25,47 @@ document.addEventListener('DOMContentLoaded', function () {
             bio: 'Gladys ensures every visitor feels prepared and supported, managing lodging arrangements and providing essential trekking briefings. Her dedication helps guests start each adventure with confidence and clarity.',
             image: 'images/gladys.jpg',
             years: 'Since 2020'
-        },
-    ];
-
-    // ===== DATOS DE TIMELINE =====
-    const timelineEvents = [
-        {
-            year: '2005',
-            title: 'The Dream Begins',
-            description: 'Michael and Sarah purchase 50 acres of forest land with a vision to create a nature retreat.',
-            icon: '💭'
-        },
-        {
-            year: '2007',
-            title: 'First Cabin Built',
-            description: 'Construction completes on our first eco-friendly cabin, using sustainable materials and solar power.',
-            icon: '🏠'
-        },
-        {
-            year: '2010',
-            title: 'Expansion',
-            description: 'Three additional cabins and the main lodge are added to accommodate growing demand.',
-            icon: '📈'
-        },
-        {
-            year: '2013',
-            title: 'Sustainability Certification',
-            description: 'We receive Green Tourism Gold Certification for our environmental practices.',
-            icon: '🌿'
-        },
-        {
-            year: '2016',
-            title: 'Community Partnership',
-            description: 'Launch of partnerships with local farmers and artisans for all our supplies.',
-            icon: '🤝'
-        },
-        {
-            year: '2020',
-            title: 'Adapting to Change',
-            description: 'Successfully navigated pandemic challenges while maintaining our commitment to guest safety and nature.',
-            icon: '🔄'
-        },
-        {
-            year: '2023',
-            title: 'Modernization',
-            description: 'Complete renovation with enhanced amenities while preserving our rustic charm.',
-            icon: '✨'
         }
     ];
 
-    // ===== ELEMENTOS DEL DOM =====
+    const timelineEvents = [
+    {
+        year: '1974',
+        title: 'Founding Inspiration',
+        description: 'Lorenzo and his son Ramiro begin sharing their passion for Tarija’s mountains and nature with local hikers and friends.',
+        icon: '🌄'
+    },
+    {
+        year: '1990',
+        title: 'Trail Beginnings',
+        description: 'The family starts mapping informal routes, guiding small groups through waterfalls, canyons, and scenic valley paths.',
+        icon: '🗺️'
+    },
+    {
+        year: '2005',
+        title: 'Growing Footsteps',
+        description: 'Interest expands as new hikers discover Tarija’s landscapes, inspiring the family to formalize their guided trekking efforts.',
+        icon: '🥾'
+    },
+    {
+        year: '2015',
+        title: 'Professional Guiding',
+        description: 'Certified outdoor guides join the team, improving safety standards and elevating the quality of every hiking experience.',
+        icon: '🎒'
+    },
+    {
+        year: '2025',
+        title: 'New Expedition Era',
+        description: 'Hiking Tarija launches multi-day expeditions across highland lagoons, remote valleys, and protected natural areas.',
+        icon: '⛰️'
+    }
+];
+
+
     const teamGrid = document.getElementById('teamGrid');
     const timeline = document.getElementById('timeline');
 
-    // ===== RENDERIZAR EQUIPO =====
+
     function renderTeam() {
         if (!teamGrid) return;
 
@@ -102,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `).join('');
     }
 
-    // ===== RENDERIZAR TIMELINE =====
+
     function renderTimeline() {
         if (!timeline) return;
 
@@ -120,9 +102,9 @@ document.addEventListener('DOMContentLoaded', function () {
         addTimelineInteractivity();
     }
 
-    // ===== INTERACTIVIDAD DE TIMELINE =====
     function addTimelineInteractivity() {
         const timelineItems = document.querySelectorAll('.timeline-item');
+        if (!timelineItems.length) return;
 
         // Animación al hacer scroll
         const observer = new IntersectionObserver((entries) => {
@@ -135,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         timelineItems.forEach(item => observer.observe(item));
 
-        // Click para ver detalle
         timelineItems.forEach(item => {
             const year = item.querySelector('.timeline-year').textContent;
             item.title = `Click to learn more about ${year}`;
@@ -149,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== MOSTRAR DETALLE DE TIMELINE =====
     function showTimelineDetail(event) {
         const modal = document.createElement('div');
         modal.className = 'timeline-modal';
@@ -164,9 +144,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.body.appendChild(modal);
 
-        modal.querySelector('.close-timeline-modal').addEventListener('click', () => {
-            modal.remove();
-        });
+        const closeBtn = modal.querySelector('.close-timeline-modal');
+        closeBtn.addEventListener('click', () => modal.remove());
 
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
@@ -175,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== CONTADOR DE VISITAS =====
+   
     function updateVisitCounter() {
         const visitKey = 'aboutPageVisits';
         let visits = parseInt(localStorage.getItem(visitKey) || '0', 10);
@@ -191,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: rgba(45, 80, 22, 0.9);
+            background-color: rgba(73, 78, 69, 0.9);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -206,9 +185,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 3000);
     }
 
-    // ===== LAZY LOAD IMÁGENES =====
+ 
     function lazyLoadAboutImages() {
         const lazyImages = document.querySelectorAll('.lazy-img');
+        if (!lazyImages.length) return;
 
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries) => {
@@ -223,10 +203,16 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             lazyImages.forEach(img => imageObserver.observe(img));
+        } else {
+            // Fallback: cargar directamente
+            lazyImages.forEach(img => {
+                img.src = img.dataset.src || img.src;
+                img.classList.add('loaded');
+            });
         }
     }
 
-    // ===== INICIALIZAR PÁGINA ABOUT =====
+
     function initializeAboutPage() {
         renderTeam();
         renderTimeline();
@@ -234,6 +220,5 @@ document.addEventListener('DOMContentLoaded', function () {
         lazyLoadAboutImages();
     }
 
-    // Inicializar
     initializeAboutPage();
 });

@@ -1,9 +1,12 @@
-/* ===== SERVICES PAGE STYLES ===== */
+/* ===== ESTILOS ESPECÍFICOS PARA SERVICES PAGE ===== */
+
+/* Layout principal */
 .services-main {
     padding: 2rem 0;
 }
 
-/* Filters Section */
+/* ===== SECCIÓN DE FILTROS (Find Your Ideal Hike) ===== */
+
 .filters-section {
     background-color: var(--white);
     padding: 2rem;
@@ -38,23 +41,38 @@
     border-color: var(--forest-green);
 }
 
-.search-box {
-    margin: 1.5rem 0;
-}
 
-.search-box input {
-    width: 100%;
-    max-width: 500px;
-    padding: 0.8rem 1rem;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
-    margin: 0 auto;
-    display: block;
+/* ===== SECCIONES DE HIKES Y ACTIVIDADES ===== */
+
+/* Títulos y subtítulos generales de sección */
+.section-title {
     text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    color: var(--forest-green);
 }
 
-/* Services Grid */
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Colores específicos para ciertas secciones */
+.rooms-section .section-title {
+    color: #C98D2C;
+}
+
+.activities-section .section-title {
+    color: #C98D2C;
+}
+
+/* Grid reutilizado para rooms y activities */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -62,7 +80,8 @@
     margin: 2.5rem 0;
 }
 
-/* Service Cards */
+/* ===== TARJETAS DE SERVICIO (rooms & activities) ===== */
+
 .service-card {
     background-color: var(--white);
     border-radius: 12px;
@@ -73,20 +92,16 @@
     flex-direction: column;
     height: 100%;
     position: relative;
-}
-
-.service-card {
     max-width: 320px;
     margin-left: auto;
     margin-right: auto;
 }
 
-
 .service-card:hover {
     transform: translateY(-5px);
 }
 
-/* Card Image */
+/* Imagen de la tarjeta */
 .card-image {
     position: relative;
     width: 100%;
@@ -106,7 +121,7 @@
     transform: scale(1.05);
 }
 
-/* Favorite Button */
+/* Botón de favorito (corazón) */
 .favorite-btn {
     position: absolute;
     top: 15px;
@@ -136,11 +151,7 @@
     background: white;
 }
 
-.rooms-section .section-title {
-    color: #C98D2C;
-}
-
-/* Featured Badge */
+/* Badge “Featured / Popular” */
 .featured-badge {
     position: absolute;
     top: 15px;
@@ -157,7 +168,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Card Content */
+/* Contenido de la tarjeta */
 .card-content {
     padding: 2.5rem;
     flex-grow: 1;
@@ -166,7 +177,6 @@
     text-align: center;
 }
 
-/* Card Title */
 .card-title {
     margin: 0 0 1.2rem 0;
     font-size: 1.4rem;
@@ -176,16 +186,15 @@
     font-weight: 700;
 }
 
-/* Card Description */
 .card-description {
     margin: 0 0 1.8rem 0;
     line-height: 1.7;
-    color: var(--text-color);
+    color: var(--text-dark);
     font-size: 1rem;
     text-align: center;
 }
 
-/* Card Details */
+/* Detalles (size, capacity, type, duration, difficulty) */
 .card-details {
     display: flex;
     flex-direction: column;
@@ -212,10 +221,10 @@
 }
 
 .detail-value {
-    color: var(--text-color);
+    color: var(--text-dark);
 }
 
-/* Amenities */
+/* Amenidades de las rutas */
 .amenities {
     display: flex;
     justify-content: center;
@@ -231,10 +240,10 @@
     border-radius: 20px;
     font-size: 0.85rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    color: var(--text-color);
+    color: var(--text-dark);
 }
 
-/* Card Footer */
+/* Footer de la tarjeta: precio + botones */
 .card-footer {
     margin-top: auto;
     text-align: center;
@@ -259,7 +268,7 @@
     margin-left: 0.3rem;
 }
 
-/* Card Actions - Updated for 2 buttons */
+/* Área de acciones (botones) */
 .card-actions {
     display: flex;
     justify-content: center;
@@ -269,7 +278,7 @@
     width: 100%;
 }
 
-/* Book Button Styles */
+/* Book room button */
 .book-btn {
     background-color: var(--wood-brown);
     color: white;
@@ -289,7 +298,7 @@
     box-shadow: 0 4px 12px rgba(30, 86, 49, 0.3);
 }
 
-/* Activity Book Button */
+/* Book activity button */
 .book-activity-btn {
     background-color: var(--wood-brown);
     color: white;
@@ -309,185 +318,8 @@
     box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
 }
 
-/* Dining Section Button */
-.dining-section .btn {
-    min-width: 180px;
-    padding: 0.9rem 1.8rem;
-    background-color: var(--forest-green);
-    color: white;
-    border: none;
-    font-weight: 600;
-}
+/* ===== BOOKING CTA (Ready for Your Next Trek?) ===== */
 
-.dining-section .btn:hover {
-    background-color: #1e5631;
-    transform: translateY(-2px);
-}
-
-/* Section Titles */
-.section-title {
-    text-align: center;
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-    color: var(--forest-green);
-}
-
-.section-subtitle {
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--text-light);
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-}
-
-/* Favorites Modal */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-}
-
-.modal-content {
-    background-color: var(--white);
-    margin: 5% auto;
-    padding: 2.5rem;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 500px;
-    max-height: 80vh;
-    overflow-y: auto;
-    position: relative;
-}
-
-.close-modal {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 1.8rem;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-.close-modal:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.favorite-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem;
-    border-bottom: 1px solid #eee;
-    text-align: left;
-    margin: 0.5rem 0;
-}
-
-.favorite-item-content {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    flex: 1;
-}
-
-.favorite-item-content img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.remove-favorite {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #e74c3c;
-    padding: 0.5rem;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-.remove-favorite:hover {
-    background-color: rgba(231, 76, 60, 0.1);
-}
-
-.empty-favorites {
-    text-align: center;
-    padding: 3rem;
-    color: var(--text-light);
-    font-size: 1.1rem;
-}
-
-/* Additional Services */
-.activities-section .section-title {
-    color: #C98D2C;
-}
-
-.additional-services {
-    background-color: var(--cream);
-    padding: 2rem;
-    border-radius: 10px;
-    margin: 3rem 0;
-    text-align: center;
-}
-
-.services-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.service-item {
-    background-color: var(--white);
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: var(--shadow);
-}
-
-.service-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.service-info h3 {
-    margin-bottom: 0.5rem;
-    color: var(--forest-green);
-}
-
-.service-price {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.3rem 0.8rem;
-    background-color: var(--forest-green);
-    color: white;
-    border-radius: 15px;
-    font-size: 0.9rem;
-}
-
-
-/* Booking CTA */
 .booking-cta {
     padding: 4rem 0;
     background: linear-gradient(rgba(51, 50, 48, 0.9), rgba(63, 61, 58, 0.8)),
@@ -495,7 +327,6 @@
     color: var(--white);
     text-align: center;
 }
-
 
 .booking-cta .cta-content {
     position: relative;
@@ -574,7 +405,103 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* No Results Message */
+/* ===== MODAL DE FAVORITOS ===== */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-modal:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.favorite-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    margin: 0.5rem 0;
+}
+
+.favorite-item-content {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex: 1;
+}
+
+.favorite-item-content img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.remove-favorite {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #e74c3c;
+    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.remove-favorite:hover {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.empty-favorites {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Mensaje "No results" generado por JS */
 .no-results {
     text-align: center;
     padding: 3rem;
@@ -583,22 +510,9 @@
     font-size: 1.1rem;
 }
 
-/* Favorites Button */
-.favorites-section {
-    margin-top: 1.5rem;
-    text-align: center;
-}
-
-#favoritesBtn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
 /* ===== RESPONSIVE DESIGN ===== */
 
-/* Desktop Layout */
+/* Desktop (>= 769px) */
 @media (min-width: 769px) {
     .card-actions {
         flex-direction: row;
@@ -610,7 +524,7 @@
     }
 }
 
-/* Tablet & Mobile */
+/* Tablet & Mobile (<= 768px) */
 @media (max-width: 768px) {
     .services-grid {
         grid-template-columns: 1fr;
@@ -686,7 +600,7 @@
     }
 }
 
-/* Mobile Small */
+/* Mobile Small (<= 480px) */
 @media (max-width: 480px) {
     .services-main {
         padding: 1.5rem 0;
@@ -729,8 +643,7 @@
     }
 
     .book-btn,
-    .book-activity-btn,
-    .dining-section .btn {
+    .book-activity-btn {
         padding: 0.8rem 1.5rem;
         min-width: 160px;
     }

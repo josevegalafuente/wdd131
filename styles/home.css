@@ -1,6 +1,6 @@
 /* ===== ESTILOS ESPECÍFICOS PARA HOME PAGE ===== */
 
-/* Hero Section */
+/* ================= HERO SECTION ================= */
 .hero {
     height: 80vh;
     min-height: 500px;
@@ -35,7 +35,7 @@
     margin-bottom: 2rem;
 }
 
-/* Welcome Section */
+/* ================= WELCOME SECTION ================= */
 .welcome-section {
     padding: 4rem 0;
     background-color: var(--white);
@@ -56,9 +56,8 @@
     display: block;
     margin: 2rem auto 0 auto;
     text-align: center;
-    width: fit-content; 
+    width: fit-content;
 }
-
 
 .welcome-image img {
     width: 100%;
@@ -73,15 +72,14 @@
     transform: scale(1.02);
 }
 
-/* Gallery Section */
-
-.gallery-section .section-title {
-    color: #C98D2C;
-}
-
+/* ================= GALLERY SECTION ================= */
 .gallery-section {
     padding: 4rem 0;
     background-color: var(--cream);
+}
+
+.gallery-section .section-title {
+    color: #C98D2C;
 }
 
 .gallery-grid {
@@ -121,18 +119,18 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top,
-            rgba(0, 0, 0, 0.9) 0%,
-            rgba(0, 0, 0, 0.7) 50%,
-            rgba(0, 0, 0, 0.4) 100%);
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.7) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
     color: var(--cream);
-    /* Usa el color crema claro de tu paleta */
     padding: 1.2rem;
     transform: translateY(100%);
     transition: transform 0.3s ease;
 }
 
-/* Mejorar el texto dentro del overlay */
 .gallery-overlay h4 {
     color: var(--white);
     font-size: 1.2rem;
@@ -147,14 +145,15 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Cuando el overlay es visible */
+/* Overlay visible */
 .gallery-item:hover .gallery-overlay {
     transform: translateY(0);
-    background: linear-gradient(to top,
-            rgba(177, 119, 32, 0.9) 0%,
-            /* Usa tu color forest-green */
-            rgba(145, 117, 59, 0.7) 50%,
-            rgba(34, 32, 32, 0.4) 100%);
+    background: linear-gradient(
+        to top,
+        rgba(177, 119, 32, 0.9) 0%,
+        rgba(145, 117, 59, 0.7) 50%,
+        rgba(34, 32, 32, 0.4) 100%
+    );
 }
 
 .gallery-controls {
@@ -164,11 +163,11 @@
     margin-top: 2rem;
 }
 
-
-/* Services Preview */
+/* ================= SERVICES PREVIEW ================= */
 .services-preview {
     padding: 4rem 0;
     background-color: var(--white);
+    margin-bottom: 3rem; /* separación respecto a la sección CTA */
 }
 
 .services-grid {
@@ -204,10 +203,10 @@
     color: #333333;
 }
 
-
-/* Call to Action Section */
+/* ================= CALL TO ACTION SECTION ================= */
 .cta-section {
     padding: 4rem 0;
+    margin-top: 3rem; /* separación adicional desde la sección anterior */
     background: linear-gradient(rgba(66, 66, 64, 0.9), rgba(58, 61, 55, 0.8)),
         url('../images/tajzara.jpg') center/cover no-repeat;
     color: var(--white);
@@ -311,3 +310,4 @@
         padding: 1.5rem;
     }
 }
+

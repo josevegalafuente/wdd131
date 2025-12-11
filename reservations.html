@@ -7,12 +7,12 @@
     <meta name="author" content="Jose Vega">
     <title>Reservations & Contact - Hiking Tarija</title>
     <meta name="description"
-        content="Book your stay at Hiking Tarija. Check availability, make reservations, or contact us for inquiries.">
+        content="Book your hiking experience in Tarija. Check availability, book guided hikes, or contact us for inquiries.">
 
     <link rel="stylesheet" href="styles/hiking.css">
     <link rel="stylesheet" href="styles/reservations.css">
     <script src="scripts/main.js"></script>
-    <script src="scripts/reservations.js"></script>
+    <script src="scripts/reservations.js" defer></script>
 </head>
 
 <body>
@@ -48,15 +48,16 @@
     <main class="main-content reservations-main">
         <div class="container">
             <div class="reservation-container">
+                <!-- LEFT: FORM + SELECTED HIKE -->
                 <div class="reservation-form-container">
                     <h2 class="section-title">Your Adventure Awaits</h2>
 
                     <form id="reservationForm" class="reservation-form">
                         <div class="form-group">
-                            <label for="roomType">Experience Type *</label>
-                            <select id="roomType" name="roomType" required aria-required="true">
-                                <option value="">Select an experience type</option>
-                                <!-- see JavaScript -->
+                            <label for="hikeType">Experience Type *</label>
+                            <select id="hikeType" name="hikeType" required aria-required="true">
+                                <option value="">Select a hike</option>
+                                <!-- JS fills options -->
                             </select>
                         </div>
 
@@ -110,16 +111,14 @@
                             <textarea id="specialRequests" name="specialRequests" rows="3"
                                 placeholder="Any special requirements or requests..."></textarea>
                         </div>
-                        
 
                         <section class="services-section">
                             <h3>Additional Services</h3>
-                            <p>Enhance your stay with these optional services:</p>
+                            <p>Enhance your experience with these optional services:</p>
                             <div id="servicesContainer">
-                                <!-- see JavaScript -->
+                                <!-- JS fills services -->
                             </div>
                         </section>
-
 
                         <div class="form-actions">
                             <button type="submit" id="bookBtn" class="btn">
@@ -131,60 +130,61 @@
                         </div>
                     </form>
 
-                
+                    <!-- SELECTED HIKE CARD -->
                     <div class="selected-room">
                         <div class="selected-room-card">
-                            <h3>Selected Room Details</h3>
-                            <div id="roomDetails">
+                            <h3>Selected Hike Details</h3>
+                            <div id="hikeDetails">
+                                <!-- JS fills selected hike info -->
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Reservation Summary & Contact -->
+                <!-- RIGHT: SUMMARY + TOTAL -->
                 <div class="reservation-sidebar">
-                    <!-- Price Summary -->
                     <div class="reservation-summary" id="reservationSummary">
                         <h3>Reservation Summary</h3>
                         <p class="summary-placeholder">Fill out the form to see your reservation details</p>
                     </div>
 
-                    <!-- Total Price -->
                     <div class="total-price-card">
                         <h3>Estimated Total</h3>
                         <div class="total-amount" id="totalDisplay">$0.00</div>
                         <p class="tax-note">* Taxes and fees not included</p>
                     </div>
-
-                    
                 </div>
             </div>
 
+            <!-- CONTACT / COMPANY INFO -->
             <section class="page-title">
                 <h1>Get in Touch</h1>
-                <p>Have questions about our hiking routes, guided tours, or outdoor services? We’re here to help you plan your next adventure in Tarija.</p>
+                <p>Have questions about our hiking routes, guided tours, or outdoor services? We’re here to help you plan
+                    your next adventure in Tarija.</p>
             </section>
+
             <section class="company">
                 <div class="company-card">
                     <h2>Hiking Tarija</h2>
                     <address>
                         <p>1234, San Roque<br>Tarija, Bolivia</p>
                         <p><strong>Phone:</strong> <a href="tel:+19595559999">+1 (959) 555-9999</a></p>
-                        <p><strong>Email:</strong> <a href="mailto:info@whitewater.com">info@hiketarija.com</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@hiketarija.com">info@hiketarija.com</a></p>
                     </address>
                 </div>
                 <div class="company-map">
-                    <iframe title="White Water Rafting Company — Map"
+                    <iframe title="Hiking Tarija — Map"
                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d209444.8649999328!2d-121.6548396970524!3d38.1052306996879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sus!4v1759608014711!5m2!1ses-419!2sus"
                         loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
                     </iframe>
                 </div>
             </section>
 
-            <!-- Contact Form Section -->
+            <!-- CONTACT FORM -->
             <section class="contact-form-section" id="contact">
                 <h2 class="section-title">We’re Here to Help</h2>
-                <p class="section-subtitle">Ask us anything about routes, safety, or tours. Send us a message and we’ll get back to you shortly.</p>
+                <p class="section-subtitle">Ask us anything about routes, safety, or tours. Send us a message and we’ll
+                    get back to you shortly.</p>
 
                 <div class="contact-form-container">
                     <form id="contactForm" class="contact-form">
@@ -230,22 +230,24 @@
     <footer class="footer site-footer">
         <div class="footer-social">
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="images/facebook.png" alt="Facebook"></a>
+                <img src="images/facebook.png" alt="Facebook"></a>
             <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
-            <img src="images/whatsapp.png" alt="WhatsApp"></a>
+                <img src="images/whatsapp.png" alt="WhatsApp"></a>
             <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-            <img src="images/youtube.png" alt="YouTube"></a>
+                <img src="images/youtube.png" alt="YouTube"></a>
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src="images/instagram.png" alt="Instagram"></a>
+                <img src="images/instagram.png" alt="Instagram"></a>
             <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="images/linkedin.png" alt="LinkedIn"></a>
+                <img src="images/linkedin.png" alt="LinkedIn"></a>
         </div>
 
         <p class="footer-copy">
-        © <span id="currentYear"></span> Hiking Tarija • Jose Vega • Bolivia</p>
+            © <span id="currentYear"></span> Hiking Tarija • Jose Vega • Bolivia
+        </p>
 
         <p class="footer-last">
-        Last Modification: <span id="lastModification"></span></p>
+            Last Modification: <span id="lastModification"></span>
+        </p>
     </footer>
 
 </body>
