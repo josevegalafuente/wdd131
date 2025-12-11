@@ -142,3 +142,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 3000);
     };
 });
+
+// ===== Footer: Año actual y última modificación =====
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Año automático
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Última modificación del archivo
+    const lastModSpan = document.getElementById('lastModification');
+    if (lastModSpan) {
+        const lastModDate = new Date(document.lastModified);
+
+        const pad = (n) => String(n).padStart(2, '0');
+
+        const formatted =
+            `${pad(lastModDate.getDate())}/` +
+            `${pad(lastModDate.getMonth() + 1)}/` +
+            `${lastModDate.getFullYear()} ` +
+            `${pad(lastModDate.getHours())}:` +
+            `${pad(lastModDate.getMinutes())}:` +
+            `${pad(lastModDate.getSeconds())}`;
+
+        lastModSpan.textContent = formatted;
+    }
+});

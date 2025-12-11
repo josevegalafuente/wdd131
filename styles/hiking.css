@@ -125,6 +125,9 @@ p {
     transition: var(--transition);
 }
 
+
+
+
 /* ===== CONTENIDO PRINCIPAL ===== */
 .main-content {
     margin-top: 80px;
@@ -352,4 +355,55 @@ p {
 
 .lazy-img.loaded {
     opacity: 1;
+}
+
+/* ===== Footer de Hiking Tarija ===== */
+.site-footer {
+    background-color: #C98D2C;     /* color principal */
+    color: #fdf7e9;                /* texto suave claro */
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+.site-footer .footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.site-footer .footer-social a {
+    display: inline-flex;
+}
+
+.site-footer .footer-social img {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+/* Texto del footer */
+.site-footer .footer-copy,
+.site-footer .footer-last {
+    margin: 0.25rem 0;
+    font-size: 0.95rem;
+}
+
+.site-footer .footer-last {
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .site-footer .footer-social img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .site-footer .footer-copy,
+    .site-footer .footer-last {
+        font-size: 0.85rem;
+    }
 }

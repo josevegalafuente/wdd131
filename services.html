@@ -9,17 +9,13 @@
     <meta name="description"
         content="Discover guided hikes, outdoor activities, and nature experiences in Tarija. Choose from half-day, full-day, multi-day, and challenging trails.">
 
-    <!-- Styles -->
     <link rel="stylesheet" href="styles/hiking.css">
     <link rel="stylesheet" href="styles/services.css">
-
-    <!-- Scripts -->
     <script src="scripts/main.js"></script>
     <script src="scripts/services.js"></script>
 </head>
 
 <body>
-    <!-- Header & Navigation -->
     <header class="header">
         <nav class="nav-container">
             <a href="index.html" class="logo">
@@ -27,14 +23,12 @@
                 <span class="logo-text">Hiking Tarija</span>
             </a>
 
-            <!-- Hamburger menu for mobile -->
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
 
-            <!-- Navigation Links -->
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -44,7 +38,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="services-hero">
         <div class="hero-content">
             <h1>Hiking Services & Adventures</h1>
@@ -52,14 +45,10 @@
         </div>
     </section>
 
-    <!-- Main Content -->
     <main class="main-content services-main">
         <div class="container">
-            <!-- Filters & Favorites -->
             <section class="filters-section">
                 <h2 class="section-title">Find Your Ideal Hike</h2>
-
-                <!-- Experience Type Filters -->
                 <div class="filter-section">
                     <h3>Filter by Trail Type</h3>
                     <div class="filter-buttons">
@@ -70,8 +59,6 @@
                         <button class="filter-btn" data-filter="Challenging">Challenging</button>
                     </div>
                 </div>
-
-                <!-- Favorites Button -->
                 <div class="favorites-section">
                     <button class="btn btn-secondary" id="favoritesBtn">
                         Favorites (0)
@@ -79,7 +66,6 @@
                 </div>
             </section>
 
-            <!-- Hikes (antes Rooms & Accommodations) -->
             <section class="rooms-section">
                 <h2 class="section-title">Your Path Awaits</h2>
                 <p class="section-subtitle">
@@ -87,21 +73,19 @@
                 </p>
 
                 <div class="services-grid" id="roomsContainer">
-                    <!-- Hikes will be loaded dynamically via JavaScript -->
+                    <!-- see JavaScript -->
                 </div>
             </section>
 
-            <!-- Activities & Experiences -->
             <section class="activities-section">
                 <h2 class="section-title">Other Activities</h2>
                 <p class="section-subtitle">Enjoy nature in a different way.</p>
 
                 <div class="services-grid" id="activitiesContainer">
-                    <!-- Activities will be loaded dynamically via JavaScript -->
+                    <!-- see JavaScript -->
                 </div>
             </section>
 
-            <!-- Booking CTA -->
             <section class="booking-cta">
                 <div class="cta-content">
                     <h2>Ready for Your Next Trek?</h2>
@@ -115,14 +99,12 @@
         </div>
     </main>
 
-    <!-- Favorites Modal -->
     <div class="modal" id="favoritesModal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2>Your Favorites</h2>
             <div class="modal-body">
                 <ul id="favoritesList">
-                    <!-- Favorites will be loaded here -->
                 </ul>
             </div>
             <div class="modal-footer">
@@ -131,45 +113,25 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Hiking Tarija</h3>
-                <p>123 Sucre<br>
-                    San Roque, Tarija<br>
-                    Bolivia</p>
-                <p>📞 + 591 87654321<br>
-                    ✉️ info@hikingtarija.com</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="reservations.html">Reservations</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="TripAdvisor">⭐</a>
-                </div>
-            </div>
+    <footer class="footer site-footer">
+        <div class="footer-social">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/facebook.png" alt="Facebook"></a>
+            <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/youtube.png" alt="YouTube"></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/linkedin.png" alt="LinkedIn"></a>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2025 Hiking Tarija. All rights reserved. |
-                <a href="#" style="color: rgba(255,255,255,0.8);">Privacy Policy</a> |
-                <a href="#" style="color: rgba(255,255,255,0.8);">Terms of Service</a>
-            </p>
-        </div>
+        <p class="footer-copy">
+        © <span id="currentYear"></span> Hiking Tarija • Jose Vega • Bolivia</p>
+
+        <p class="footer-last">
+        Last Modification: <span id="lastModification"></span></p>
     </footer>
 
 </body>

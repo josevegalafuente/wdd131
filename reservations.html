@@ -16,7 +16,6 @@
 </head>
 
 <body>
-    <!-- Header & Navigation -->
     <header class="header">
         <nav class="nav-container">
             <a href="index.html" class="logo">
@@ -24,14 +23,12 @@
                 <span class="logo-text">Hiking Tarija</span>
             </a>
 
-            <!-- Hamburger menu for mobile -->
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
 
-            <!-- Navigation Links -->
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -41,7 +38,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="reservations-hero">
         <div class="hero-content">
             <h1>Plan Your Next Trek</h1>
@@ -49,21 +45,18 @@
         </div>
     </section>
 
-    <!-- Main Content -->
     <main class="main-content reservations-main">
         <div class="container">
             <div class="reservation-container">
-                <!-- Left Column: Reservation Form -->
                 <div class="reservation-form-container">
                     <h2 class="section-title">Your Adventure Awaits</h2>
 
                     <form id="reservationForm" class="reservation-form">
-                        <!-- Room Selection -->
                         <div class="form-group">
                             <label for="roomType">Experience Type *</label>
                             <select id="roomType" name="roomType" required aria-required="true">
                                 <option value="">Select an experience type</option>
-                                <!-- Options will be populated by JavaScript -->
+                                <!-- see JavaScript -->
                             </select>
                         </div>
 
@@ -80,7 +73,6 @@
                             </div>
                         </div>
 
-                        <!-- Guests -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="guests">Number of Guests *</label>
@@ -94,7 +86,6 @@
                             </div>
                         </div>
 
-                        <!-- Guest Information -->
                         <div class="form-group">
                             <label for="fullName">Full Name *</label>
                             <input type="text" id="fullName" name="fullName" required aria-required="true"
@@ -114,23 +105,22 @@
                             </div>
                         </div>
 
-                        <!-- Special Requests -->
                         <div class="form-group">
                             <label for="specialRequests">Special Requests</label>
                             <textarea id="specialRequests" name="specialRequests" rows="3"
                                 placeholder="Any special requirements or requests..."></textarea>
                         </div>
+                        
 
-                        <!-- Additional Services -->
                         <section class="services-section">
                             <h3>Additional Services</h3>
                             <p>Enhance your stay with these optional services:</p>
                             <div id="servicesContainer">
-                                <!-- Services will be loaded by JavaScript -->
+                                <!-- see JavaScript -->
                             </div>
                         </section>
 
-                        <!-- Form Actions -->
+
                         <div class="form-actions">
                             <button type="submit" id="bookBtn" class="btn">
                                 Book Now
@@ -141,11 +131,12 @@
                         </div>
                     </form>
 
-                    <!-- Selected Room Details -->
+                
                     <div class="selected-room">
-                        <h3>Selected Room Details</h3>
-                        <div id="roomDetails">
-                            <!-- Room details will be loaded by JavaScript -->
+                        <div class="selected-room-card">
+                            <h3>Selected Room Details</h3>
+                            <div id="roomDetails">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -170,11 +161,8 @@
             </div>
 
             <section class="page-title">
-                <h1>Contact Us</h1>
-                <p>Have questions about rafting trips, group bookings, or gear? We’re here to help! Reach out for
-                    details, safety info, or
-                    to plan your next river adventure. Our friendly team is ready to guide you every step of the way.
-                </p>
+                <h1>Get in Touch</h1>
+                <p>Have questions about our hiking routes, guided tours, or outdoor services? We’re here to help you plan your next adventure in Tarija.</p>
             </section>
             <section class="company">
                 <div class="company-card">
@@ -195,8 +183,8 @@
 
             <!-- Contact Form Section -->
             <section class="contact-form-section" id="contact">
-                <h2 class="section-title">Contact Us</h2>
-                <p class="section-subtitle">Have questions? Send us a message and we'll respond within 24 hours.</p>
+                <h2 class="section-title">We’re Here to Help</h2>
+                <p class="section-subtitle">Ask us anything about routes, safety, or tours. Send us a message and we’ll get back to you shortly.</p>
 
                 <div class="contact-form-container">
                     <form id="contactForm" class="contact-form">
@@ -216,10 +204,10 @@
                             <label for="contactSubject">Subject</label>
                             <select id="contactSubject" name="contactSubject">
                                 <option value="">Select a topic</option>
-                                <option value="reservation">Reservation Inquiry</option>
-                                <option value="availability">Availability Question</option>
-                                <option value="special_request">Special Request</option>
-                                <option value="group_booking">Group Booking</option>
+                                <option value="reservation">Tour Reservation</option>
+                                <option value="availability">Trail Availability</option>
+                                <option value="special_request">Special Hiking Request</option>
+                                <option value="group_booking">Group Trek Booking</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -239,44 +227,25 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Hiking Tarija</h3>
-                <p>123 Sucre<br>
-                    San Roque, Tarija<br>
-                    Bolivia</p>
-                <p>📞 + 591 87654321<br>
-                    ✉️ info@hikingtarija.com</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="reservations.html">Reservations</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="TripAdvisor">⭐</a>
-                </div>
-            </div>
+    <footer class="footer site-footer">
+        <div class="footer-social">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/facebook.png" alt="Facebook"></a>
+            <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/youtube.png" alt="YouTube"></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/linkedin.png" alt="LinkedIn"></a>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2025 Hiking Tarija. All rights reserved. | <a href="#"
-                    style="color: rgba(255,255,255,0.8);">Privacy Policy</a> | <a href="#"
-                    style="color: rgba(255,255,255,0.8);">Terms of Service</a></p>
-        </div>
+        <p class="footer-copy">
+        © <span id="currentYear"></span> Hiking Tarija • Jose Vega • Bolivia</p>
+
+        <p class="footer-last">
+        Last Modification: <span id="lastModification"></span></p>
     </footer>
 
 </body>

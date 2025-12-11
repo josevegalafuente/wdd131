@@ -8,23 +8,20 @@
     <title>About Us - Hiking Tarija</title>
     <meta name="description"
         content="About Hiking Tarija: our story, our mission, and our passion for sharing Tarija’s best hiking routes, canyon treks, and nature experiences with explorers.">
-    <!-- Stylesheets -->
+
     <link rel="stylesheet" href="styles/hiking.css">
     <link rel="stylesheet" href="styles/about.css">
-    <!-- JavaScript Files -->
     <script src="scripts/main.js"></script>
     <script src="scripts/about.js"></script>
 </head>
 
 <body>
-    <!-- Header & Navigation -->
     <header class="header">
         <nav class="nav-container">
             <a href="index.html" class="logo">
                 <img src="images/logo.png" alt="Inn Among Trees Logo" class="logo-img">
                 <span class="logo-text">Hiking Tarija</span>
             </a>
-
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -40,7 +37,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="about-hero">
         <div class="hero-content">
             <h1>The Spirit Behind Hiking Tarija</h1>
@@ -48,9 +44,7 @@
         </div>
     </section>
 
-    <!-- Main Content -->
     <main class="main-content">
-        <!-- Our Story -->
         <section class="our-story">
             <div class="container">
                 <h2 class="section-title">From Vision to Reality</h2>
@@ -68,7 +62,6 @@
             </div>
         </section>
 
-        <!-- Mission & Values -->
         <section class="mission-values">
             <div class="container">
                 <h2 class="section-title">Our Trail Philosophy</h2>
@@ -89,29 +82,24 @@
             </div>
         </section>
 
-        <!-- Team Section -->
         <section class="team-section">
             <div class="container">
                 <h2 class="section-title">Meet Our Family</h2>
                 <div class="team-grid" id="teamGrid">
-                    <!-- Team members loaded via JavaScript -->
+                    <!-- see JavaScript -->
                 </div>
             </div>
         </section>
 
-        <!-- Timeline -->
         <section class="timeline-section">
             <div class="container">
                 <h2 class="section-title">Our Trail Story</h2>
                 <div class="timeline" id="timeline">
-                    <!-- Timeline items loaded via JavaScript -->
+                    <!-- see JavaScript -->
                 </div>
             </div>
         </section>
 
-        <!-- Awards & Recognition -->
-
-        <!-- Contact CTA -->
         <section class="contact-cta">
             <div class="container">
                 <div class="cta-content">
@@ -123,44 +111,25 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Hiking Tarija</h3>
-                <p>123 Sucre<br>
-                    San Roque, Tarija<br>
-                    Bolivia</p>
-                <p>📞 + 591 87654321<br>
-                    ✉️ info@hikingtarija.com</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="reservations.html">Reservations</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="TripAdvisor">⭐</a>
-                </div>
-            </div>
+    <footer class="footer site-footer">
+        <div class="footer-social">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/facebook.png" alt="Facebook"></a>
+            <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/youtube.png" alt="YouTube"></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/linkedin.png" alt="LinkedIn"></a>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2025 Hiking Tarija. All rights reserved. | <a href="#"
-                    style="color: rgba(255,255,255,0.8);">Privacy Policy</a> | <a href="#"
-                    style="color: rgba(255,255,255,0.8);">Terms of Service</a></p>
-        </div>
+        <p class="footer-copy">
+        © <span id="currentYear"></span> Hiking Tarija • Jose Vega • Bolivia</p>
+
+        <p class="footer-last">
+        Last Modification: <span id="lastModification"></span></p>
     </footer>
 
 </body>

@@ -17,7 +17,74 @@
     }
 }
 
+/* TITULO PRINCIPAL */
+.selected-room h3 {
+    color: #ffffff;
+}
+
+/* CARD PRINCIPAL */
+.selected-room .room-detail-card h3 {
+    color: #333333;
+}
+
+/* DESCRIPCIÓN */
+.selected-room .room-detail-card p {
+    color: #333333;
+}
+
+/* ETIQUETAS DE DETALLES (Price, Max Guests, etc.) */
+.selected-room .room-detail-card .spec-item strong {
+    color: #333333;
+}
+
+/* TÍTULO DE AMENITIES */
+.selected-room .room-detail-card .amenities strong {
+    color: #333333;
+}
+
+/* ITEMS DE AMENITIES */
+.selected-room .room-detail-card .amenities-list span {
+    color: #333333;
+}
+
+/* BOX estilo tarjeta para Selected Room Details */
+.selected-room-card .section-title,
+.selected-room h3 {
+    text-align: center;
+    width: 100%;
+}
+
+/* Centrar el nombre del hike (ej: Marquiri) */
+.selected-room-card .room-detail-card h3 {
+    text-align: center;
+    width: 100%;
+}
+
+.selected-room-card {
+    background-color: #C98D2C;   /* Fondo naranja */
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    color: #333333;   
+    margin-top: 2.5rem;            /* Texto blanco */
+}
+
+/* Asegurar que el contenido dentro también respete padding */
+.selected-room-card h3 {
+    margin-top: 0;
+    color: #333333;
+}
+
 /* Formulario */
+.reservation-form-container .section-title {
+    color: #C98D2C;
+}
+
+.reservation-sidebar {
+    margin-top: 6.5rem;   /* Ajusta este valor hasta que quede alineado */
+}
+
+
 .reservation-form {
     background-color: var(--white);
     padding: 2rem;
@@ -59,7 +126,19 @@
 }
 
 /* Servicios adicionales */
+.services-section h3,
+.services-section p {
+    color: #C98D2C !important;
+}
+
+.services-section h3,
+.services-section p {
+    text-align: center;
+}
+
+
 .services-section {
+    margin-bottom: 2.5rem;
     margin: 2rem 0;
     padding: 1.5rem;
     background-color: var(--cream);
@@ -100,6 +179,8 @@
 }
 
 /* Resumen */
+
+
 .reservation-summary {
     background-color: var(--white);
     padding: 2rem;
@@ -131,6 +212,19 @@
 .total-price {
     font-size: 1.5rem;
 }
+
+.total-price-card {
+    text-align: center;
+}
+
+.total-price-card h3 {
+    color: #C98D2C;
+}
+
+.total-price-card .tax-note {
+    color: #C98D2C;
+}
+
 
 /* Habitación seleccionada */
 .room-detail-card {
@@ -165,6 +259,91 @@
     flex: 1;
 }
 
+/* ===== CONTACT US SECTION (INTRO + COMPANY CARD + MAP) ===== */
+
+/* Bloque de título "Contact Us" y párrafo */
+.page-title {
+    text-align: center;
+    margin: 4rem 0 2rem;
+}
+
+.page-title h1 {
+    font-size: 2.4rem;
+    color: #C98D2C;              /* color principal Hiking */
+    margin-bottom: 0.75rem;
+}
+
+.page-title p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Contenedor con tarjeta + mapa, similar al ejemplo pero con tus colores */
+.company {
+    background-color: var(--white);
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+    gap: 2rem;
+    align-items: stretch;
+    margin-bottom: 3rem;
+}
+
+/* Tarjeta de la empresa (lado izquierdo) */
+.company-card h2 {
+    background-color: #C98D2C;   /* barra tipo header de la tarjeta */
+    color: #ffffff;
+    padding: 0.9rem 1.4rem;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    margin: 0 0 1.5rem;
+}
+
+.company-card address {
+    font-style: normal;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.company-card p {
+    margin-bottom: 0.6rem;
+}
+
+.company-card a {
+    color: var(--forest-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.company-card a:hover {
+    text-decoration: underline;
+}
+
+/* Mapa (lado derecho) */
+.company-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* Responsive: en móvil se apilan uno debajo del otro */
+@media (max-width: 768px) {
+    .company {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+    }
+
+    .page-title {
+        margin-top: 3rem;
+    }
+}
+
 /* Modal de confirmación */
 .confirmation-modal {
     position: fixed;
@@ -194,6 +373,34 @@
     border-radius: 5px;
     margin: 1.5rem 0;
     text-align: left;
+}
+
+/* CONTACT FORM SECTION – Change text color to #333333 */
+
+.contact-form-section .section-title,
+.contact-form-section .section-subtitle {
+    color: #C98D2C;
+    text-align: center;
+}
+
+/* Labels inside the contact form */
+.contact-form-section label {
+    color: #333333;
+    font-weight: 600;
+}
+
+/* Text inside inputs and textarea (the typed text) */
+.contact-form-section input,
+.contact-form-section select,
+.contact-form-section textarea {
+    color: #333333;
+}
+
+/* Placeholder color */
+.contact-form-section input::placeholder,
+.contact-form-section textarea::placeholder {
+    color: #333333;
+    opacity: 1; /* Ensures it is fully visible */
 }
 
 /* Responsive */

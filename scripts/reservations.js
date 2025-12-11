@@ -45,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
+
     // ===== SERVICIOS ADICIONALES =====
     const additionalServices = [
-        { id: 'breakfast', name: 'Daily Breakfast', price: 15, per: 'per person per day' },
-        { id: 'dinner', name: 'Gourmet Dinner', price: 45, per: 'per person' },
-        { id: 'spa', name: 'Spa Package', price: 80, per: 'per person' },
-        { id: 'horse', name: 'Horseback Riding', price: 60, per: 'per person' },
-        { id: 'guide', name: 'Private Guide', price: 100, per: 'per day' }
+        { id: 'guide', name: 'Private Guide', price: 50, per: 'per day' },
+        { id: 'camping', name: 'Camping Experience', price: 50, per: 'per person' },
+        { id: 'glamping', name: 'Glamping Overnight Stay', price: 80, per: 'per person' },
+        { id: 'alpina', name: 'Alpine Cabin Stay', price: 120, per: 'per person' },
     ];
 
     // ===== ELEMENTOS DEL DOM =====
